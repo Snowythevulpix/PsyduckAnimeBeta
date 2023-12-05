@@ -10,7 +10,18 @@
   <link rel="icon" href="/assets/Psyduck.png"/>
   <style>
     /* Your CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #424242;
+      color: #fff;
+      position: relative;
+    }
     .container {
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 0 20px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
@@ -25,11 +36,17 @@
       max-width: 300px;
       height: auto;
     }
-    .english-name {
+    .title {
       margin-bottom: 10px;
     }
     .title-info {
       white-space: pre-line;
+    }
+    .watch-now {
+      max-width: 300px;
+      height: auto;
+      cursor: pointer;
+      margin-left: 50px; /* Adjusted margin to move it further to the right */
     }
     /* Updated styling for dark mode background */
     body {
@@ -115,11 +132,30 @@
   <div class="container">
     <img class="artwork" src="" alt="Artwork">
     <div class="info">
-    <h2 class="title">Title</h2>
-    <p class="title-info"></p>
+      <h2 class="title">Title</h2>
+      <p class="title-info"></p>
       <h2 class="description-title">Description</h2>
       <p class="description"></p>
     </div>
+
+      
+      <script>
+        function getAniIdFromUrl() {
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const aniid = urlParams.get('id'); // Adjusted to 'id' instead of 'aniid' for the given URL structure
+          
+          return aniid;
+        }
+      
+        // Usage example:
+        const extractedId = getAniIdFromUrl();
+        console.log(extractedId); // Check the extracted 'id' value in the console for debugging purposes
+      </script>
+      
+      <a href="play.html?id=${extractedId}" target="_blank">
+        <img class="watch-now" src="/assets/watchnow.jpg" alt="Watch Now">
+      </a>
   </div>
 
   <script>
@@ -152,17 +188,11 @@
           const artworkImg = document.querySelector('.artwork');
           artworkImg.src = artwork ? artwork.img : ''; // Set image source or leave it empty if not found
 
-          const englishNameElement = document.querySelector('.english-name');
-          if (englishName) {
-            englishNameElement.textContent = englishName; // Display English name if available
-          }
-
           const descriptionElement = document.querySelector('.description');
           descriptionElement.textContent = description; // Display description
 
           const titleElement = document.querySelector('.title-info');
           titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}\nNative: ${nativeTitle}`;
-          // Display all three titles in the specified format
         })
         .catch(error => {
           console.error('Error fetching data:', error);
