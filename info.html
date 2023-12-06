@@ -201,24 +201,6 @@
       }
     </script>
 
-    <a href="#" onclick="redirectToPlay()">
-      <img class="watch-now" src="/assets/watchnow.jpg" alt="Watch Now">
-    </a>
-
-    <script>
-      // Extract the 'id' from the URL
-      const queryString = window.location.search;
-      const extractedId = queryString.substring(1); // Remove the '?' from the URL
-
-      function redirectToPlay() {
-        if (extractedId) {
-          window.location.href = `play.html?${extractedId}`;
-        } else {
-          console.error('No ID found in the URL');
-        }
-      }
-    </script>
-
   </div>
 
 </body>
