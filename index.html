@@ -80,37 +80,33 @@
       width: 150px; /* Increased size of the loading spinner for mobile */
       height: 150px;
     }
+
     /* Mobile Optimization */
     @media screen and (max-width: 600px) {
-      body {
-        font-size: 14px; /* Adjusted font size for smaller screens */
-      }
-
-      .container {
-        max-width: 100%; /* Adjusted for smaller screens */
-        padding: 0 10px; /* Smaller padding for smaller screens */
+      .show-grid {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 items per row */
+        grid-auto-rows: 200px; /* Adjust the row height */
+        gap: 20px; /* Increase the gap between items */
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Hide horizontal overflow */
       }
 
       .show {
-        width: 100px; /* Smaller width for the images on mobile */
+        width: calc(50% - 10px); /* Adjust width to fit 2 items with gap */
       }
-
-      .show img {
-        width: 100%;
-        height: auto; /* Set to auto for image aspect ratio */
-        display: block;
-      }
-
-      /* Add any additional mobile-specific styles here */
     }
   </style>
 </head>
 <body>
   <!-- Loading overlay -->
-  <!-- ... -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <img src="/assets/loading.gif" alt="Loading...">
+  </div>
 
   <!-- Home button image -->
-  <!-- ... -->
+  <a href="/">
+    <img class="home-button" src="/assets/logo.png" alt="Home">
+  </a>
 
   <div class="container">
     <h2>Ash's series</h2>
@@ -123,43 +119,52 @@
     document.addEventListener("DOMContentLoaded", async function () {
       try {
         const ids = [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291, 21356, 97634, 112153, 158870];
-
+  
         const showGrid = document.getElementById('showGrid');
-
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        let loadedImages = 0; // Counter to track loaded images
+  
         async function fetchAndDisplayData(id) {
-          const response = await fetch(`https://api.anify.tv/info/${id}`);
-          const data = await response.json();
-          const artwork = data.artwork;
-
-          if (artwork && artwork.length > 0) {
-            const imgURL = artwork[0].img;
-            const title = data.title;
-
-            const showElement = document.createElement('div');
-            showElement.classList.add('show');
-            const anchorElement = document.createElement('a');
-            anchorElement.href = `/info.html?${id}`;
-            const imgElement = document.createElement('img');
-            imgElement.src = imgURL;
-            imgElement.alt = `Show ${id}`;
-            const titleElement = document.createElement('div');
-            titleElement.classList.add('show-title');
-            titleElement.innerText = `${title.english}`;
-
-            anchorElement.appendChild(imgElement);
-            showElement.appendChild(anchorElement);
-            showElement.appendChild(titleElement);
-
-            showGrid.appendChild(showElement);
+          try {
+            const response = await fetch(`https://api.anify.tv/info/${id}`);
+            const data = await response.json();
+            const artwork = data.artwork;
+  
+            if (artwork && artwork.length > 0) {
+              const imgURL = artwork[0].img;
+              const title = data.title;
+  
+              const showElement = document.createElement('div');
+              showElement.classList.add('show');
+              const anchorElement = document.createElement('a');
+              anchorElement.href = `/info.html?${id}`;
+              const imgElement = document.createElement('img');
+              imgElement.src = imgURL;
+              imgElement.alt = `Show ${id}`;
+              const titleElement = document.createElement('div');
+              titleElement.classList.add('show-title');
+              titleElement.innerText = `${title.english}`;
+  
+              anchorElement.appendChild(imgElement);
+              showElement.appendChild(anchorElement);
+              showElement.appendChild(titleElement);
+  
+              showGrid.appendChild(showElement);
+              imgElement.onload = () => {
+                loadedImages++;
+                if (loadedImages === ids.length) {
+                  loadingOverlay.style.display = 'none'; // Hide loading overlay when all images are loaded
+                }
+              };
+            }
+          } catch (error) {
+            console.error(`Error fetching data for ID ${id}:`, error);
           }
         }
-
+  
         for (const id of ids) {
           await fetchAndDisplayData(id);
         }
-
-        // Hide loading overlay when all data is loaded
-        // ...
       } catch (error) {
         console.error('Error fetching or parsing data:', error);
       }
