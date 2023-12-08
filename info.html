@@ -141,7 +141,6 @@
   </style>
 </head>
 <body>
-
   <!-- Home button image -->
   <a href="/">
     <img class="home-button" src="/assets/logo.png" alt="Home">
@@ -157,16 +156,42 @@
       <p class="description"></p>
     </div>
 
-    <script>
-      // Get the current URL
-      const currentUrl = window.location.href;
+    <!-- Image replacing the Extract Numbers button -->
+    <img class="watch-now" src="/assets/watchnow.jpg" alt="Watch Now" onclick="extractNumbers()">
 
-      // Extract the 'id' from the URL
+    <script>
+      // JavaScript code to retrieve data and handle the functionality
+      function extractNumbers() {
+        // Get the current URL
+        const currentUrl = window.location.href;
+
+        // Extract the numbers after '?'
+        const queryParamsIndex = currentUrl.lastIndexOf('?');
+        if (queryParamsIndex !== -1) {
+          const numbers = currentUrl.slice(queryParamsIndex + 1); // Extract the string after '?'
+          const numbersArray = numbers.split('/'); // Split the numbers by '/'
+
+          // Extract id and episode numbers
+          const id = numbersArray[0].replace(/\D/g, ''); // Extract numeric characters as id
+          const episode = numbersArray[1] ? numbersArray[1].replace(/\D/g, '') : ''; // Extract numeric characters as episode, if available
+
+          // Construct the new URL with id, episode, and subtype=dub
+          const newUrl = `play.html?id=${id}&episode=${episode}&subtype=dub`;
+          console.log('New URL:', newUrl);
+
+          // Redirect the user to the new URL
+          window.location.href = newUrl;
+        } else {
+          console.error('No query parameters found in the URL');
+        }
+      }
+
+      // Fetch and display data from the API
+      const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
       const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
 
       if (id) {
-        // If 'id' exists in the URL, proceed with fetching data
         fetch(`https://api.anify.tv/info/${id}`)
           .then(response => {
             if (!response.ok) {
@@ -175,7 +200,6 @@
             return response.json();
           })
           .then(data => {
-            // Handle the retrieved data here
             const artwork = data.artwork.find(item => item.type === 'poster' && item.providerId === 'anilist');
             const englishName = data.english || '';
             const description = data.description || '';
@@ -183,12 +207,11 @@
             const romajiTitle = data.title.romaji || 'Not available';
             const nativeTitle = data.title.native || 'Not available';
 
-            // Display the retrieved information on the webpage
             const artworkImg = document.querySelector('.artwork');
-            artworkImg.src = artwork ? artwork.img : ''; // Set image source or leave it empty if not found
+            artworkImg.src = artwork ? artwork.img : '';
 
             const descriptionElement = document.querySelector('.description');
-            descriptionElement.textContent = description; // Display description
+            descriptionElement.textContent = description;
 
             const titleElement = document.querySelector('.title-info');
             titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}\nNative: ${nativeTitle}`;
@@ -200,41 +223,6 @@
         console.error('No ID found in the URL');
       }
     </script>
-
-<!-- Button to extract numbers from URL -->
-<button onclick="extractNumbers()">Extract Numbers</button>
-
-<script>
-  function extractNumbers() {
-    // Get the current URL
-    const currentUrl = window.location.href;
-
-    // Extract the numbers after '?'
-    const queryParamsIndex = currentUrl.lastIndexOf('?');
-    if (queryParamsIndex !== -1) {
-      const numbers = currentUrl.slice(queryParamsIndex + 1); // Extract the string after '?'
-      const numbersArray = numbers.split('/'); // Split the numbers by '/'
-
-      // Extract id and episode numbers
-      const id = numbersArray[0].replace(/\D/g, ''); // Extract numeric characters as id
-      const episode = numbersArray[1] ? numbersArray[1].replace(/\D/g, '') : ''; // Extract numeric characters as episode, if available
-
-      // Construct the new URL with id, episode, and subtype=dub
-      const newUrl = `play.html?id=${id}&episode=${episode}&subtype=dub`;
-      console.log('New URL:', newUrl);
-
-      // Redirect the user to the new URL
-      window.location.href = newUrl;
-    } else {
-      console.error('No query parameters found in the URL');
-    }
-  }
-</script>
-
-
-
-
-
   </div>
 </body>
 </html>
