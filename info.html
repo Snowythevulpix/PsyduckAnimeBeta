@@ -201,7 +201,40 @@
       }
     </script>
 
-  </div>
+<!-- Button to extract numbers from URL -->
+<button onclick="extractNumbers()">Extract Numbers</button>
 
+<script>
+  function extractNumbers() {
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    // Extract the numbers after '?'
+    const queryParamsIndex = currentUrl.lastIndexOf('?');
+    if (queryParamsIndex !== -1) {
+      const numbers = currentUrl.slice(queryParamsIndex + 1); // Extract the string after '?'
+      const numbersArray = numbers.split('/'); // Split the numbers by '/'
+
+      // Extract id and episode numbers
+      const id = numbersArray[0].replace(/\D/g, ''); // Extract numeric characters as id
+      const episode = numbersArray[1] ? numbersArray[1].replace(/\D/g, '') : ''; // Extract numeric characters as episode, if available
+
+      // Construct the new URL with id, episode, and subtype=dub
+      const newUrl = `play.html?id=${id}&episode=${episode}&subtype=dub`;
+      console.log('New URL:', newUrl);
+
+      // Redirect the user to the new URL
+      window.location.href = newUrl;
+    } else {
+      console.error('No query parameters found in the URL');
+    }
+  }
+</script>
+
+
+
+
+
+  </div>
 </body>
 </html>
