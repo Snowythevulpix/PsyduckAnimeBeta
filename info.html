@@ -160,31 +160,28 @@
     <img class="watch-now" src="/assets/watchnow.jpg" alt="Watch Now" onclick="extractNumbers()">
 
     <script>
-      // JavaScript code to retrieve data and handle the functionality
-      function extractNumbers() {
-        // Get the current URL
-        const currentUrl = window.location.href;
+function extractNumbers() {
+    // Updated code with default episode value set to 1
+    const currentUrl = window.location.href;
+    const queryParamsIndex = currentUrl.lastIndexOf('?');
 
-        // Extract the numbers after '?'
-        const queryParamsIndex = currentUrl.lastIndexOf('?');
-        if (queryParamsIndex !== -1) {
-          const numbers = currentUrl.slice(queryParamsIndex + 1); // Extract the string after '?'
-          const numbersArray = numbers.split('/'); // Split the numbers by '/'
+    if (queryParamsIndex !== -1) {
+        const numbers = currentUrl.slice(queryParamsIndex + 1);
+        const numbersArray = numbers.split('/');
 
-          // Extract id and episode numbers
-          const id = numbersArray[0].replace(/\D/g, ''); // Extract numeric characters as id
-          const episode = numbersArray[1] ? numbersArray[1].replace(/\D/g, '') : ''; // Extract numeric characters as episode, if available
+        const id = numbersArray[0].replace(/\D/g, '');
+        let episode = numbersArray[1] ? numbersArray[1].replace(/\D/g, '') : '';
+        episode = episode || '1'; // Set default episode value to 1 if no episode is provided
 
-          // Construct the new URL with id, episode, and subtype=dub
-          const newUrl = `play.html?id=${id}&episode=${episode}&subtype=dub`;
-          console.log('New URL:', newUrl);
+        const newUrl = `play.html?id=${id}&episodeno=${episode}&subtype=dub`;
+        console.log('New URL:', newUrl);
 
-          // Redirect the user to the new URL
-          window.location.href = newUrl;
-        } else {
-          console.error('No query parameters found in the URL');
-        }
-      }
+        window.location.href = newUrl;
+    } else {
+        console.error('No query parameters found in the URL');
+    }
+}
+
 
       // Fetch and display data from the API
       const currentUrl = window.location.href;
