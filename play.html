@@ -118,11 +118,11 @@ for (const provider of data) {
                     // Create a container for the episode
                     const episodeContainer = document.getElementById("episode-container");
                     const episodeElement = document.createElement("div");
-                    episodeElement.id = `episode-${episodeId}`;
+                    episodeElement.id = `episode-${episodeno}`;
 
                     // Create a header with episode information
                     const episodeHeader = document.createElement("h2");
-                    episodeHeader.textContent = `Episode ${episodeId}`;
+                    episodeHeader.textContent = `Episode ${episodeno}`;
                     episodeElement.appendChild(episodeHeader);
 
                     // Append the episode container to the main container
