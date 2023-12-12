@@ -32,35 +32,27 @@
         PsyduckAnime - watch Pokemon subbed and dubbed for free
     </div>
 
-<script>
-// Function to get URL parameters
-function getUrlParams() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  return urlParams;
-}
-
-// Usage
-const urlParams = getUrlParams();
-
-// Get values by keys
-const id = urlParams.get('id');
-const episodeno = urlParams.get('episodeno');
-const subtype = urlParams.get('subtype');
-
-// Displaying the retrieved values
-console.log('ID:', id);
-console.log('Episode:', episodeno);
-console.log('Subtype:', subtype);
-
-</script>
-
     <div id="episode-container"></div>
 
     <!-- Create a container for the video player -->
     <div id="videoPlayerContainer"></div>
 
     <script>
+
+// Get the URL parameters
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+// Get the specific values from the URL
+const id = urlParams.get('id');
+const episodeNo = urlParams.get('episodeno');
+const subtype = urlParams.get('subtype');
+
+// Use the values in your code
+console.log('ID:', id);
+console.log('Episode Number:', episodeNo);
+console.log('Subtype:', subtype);
+
         let videoPlayer; // Variable to hold the video player
         let episode; // Variable to hold the episode information
 
@@ -68,10 +60,15 @@ console.log('Subtype:', subtype);
         async function loadAndPlayEpisode(episodeId) {
             try {
                 // Fetch episode data for the given episode ID
-                const response = await fetch("https://api.anify.tv/episodes/158871");
+                const response = await fetch(`https://api.anify.tv/episodes/${id}`);
                 const data = await response.json();
 
                 let foundCount = 0; // Counter to track the number of matches found
+
+console.log('Data from API:', data); // Check the data received from the API
+console.log('Episode:', episode); // Check if the episode data is retrieved correctly
+console.log('Video URL:', video1080p); // Check the video URL
+
 
 for (const provider of data) {
     const episodes = provider.episodes;
@@ -102,10 +99,10 @@ for (const provider of data) {
                 // Assign the value of episode.id to episode.watchId
                 episode.watchId = episode.id;
 
-                const responseSources = await fetch(`https://api.anify.tv/sources?providerId=zoro&watchId=${episode.watchId}&episodeNumber=${episodeno}&id=${id}&subType=${subtype}`);
+                const responseSources = await fetch(`https://api.anify.tv/sources?providerId=animepahe&watchId=${episode.watchId}&episodeNumber=${episodeno}&id=${id}&subType=${subtype}`);
 
                 if (!responseSources.ok) {
-                    console.log(`Failed to fetch episode data for episode ${episodeId}`);
+                    console.log(`Failed to fetch episode data for episode ${episodeId}, ${responseSources}`);
                     return;
                 }
 
@@ -118,11 +115,11 @@ for (const provider of data) {
                     // Create a container for the episode
                     const episodeContainer = document.getElementById("episode-container");
                     const episodeElement = document.createElement("div");
-                    episodeElement.id = `episode-${episodeno}`;
+                    episodeElement.id = `episode-${episodeId}`;
 
                     // Create a header with episode information
                     const episodeHeader = document.createElement("h2");
-                    episodeHeader.textContent = `Episode ${episodeno}`;
+                    episodeHeader.textContent = `Episode ${episodeId}`;
                     episodeElement.appendChild(episodeHeader);
 
                     // Append the episode container to the main container
@@ -144,10 +141,16 @@ for (const provider of data) {
             }
         }
 
-// Get the episode number from the URL parameters
-const episodeId = parseInt(urlParams.get('episode'));
+        // Get the episode number from the fragment identifier in the URL
+        const fragmentIdentifier = window.location.search;
+        const episodeId = parseInt(fragmentIdentifier.substring(1));
 
-
+        // Check if the episodeId is 146
+        if (episodeId === 146) {
+            alert("This episode doesn't exist. the last episode is 145 not 146");
+            window.location.href = "home.html"; // Redirect to home.html
+        } else {
+        }
 
         // Function to save the timestamp in Local Storage
         function saveTimestamp() {
