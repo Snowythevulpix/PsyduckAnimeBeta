@@ -60,13 +60,14 @@
             return response.json();
           })
           .then(data => {
+            const total = data.totalEpisodes || 0;
+
             const artwork = data.artwork.find(item => item.type === 'poster' && item.providerId === 'anilist');
             const englishName = data.english || '';
             const description = data.description || '';
             const englishTitle = data.title.english || 'Not available';
             const romajiTitle = data.title.romaji || 'Not available';
             const nativeTitle = data.title.native || 'Not available';
-            const total = data.totalEpisodes || 0;
 
             const artworkImg = document.querySelector('.artwork');
             artworkImg.src = artwork ? artwork.img : '';
@@ -83,7 +84,7 @@
             // Enable scrolling functionality once the initial data is loaded
             window.addEventListener('scroll', handleScroll);
 
-            // Create episode buttons immediately after fetching data
+            // Call createEpisodeButtons function here after fetching data
             createEpisodeButtons(totalEpisodes);
           })
           .catch(error => {
@@ -96,6 +97,7 @@
 
     function createEpisodeButtons(totalEpisodes) {
       const episodeLinksContainer = document.getElementById("episode-links");
+      episodeLinksContainer.innerHTML = ''; // Clear the container
 
       for (let episode = 1; episode <= totalEpisodes; episode++) {
         let link = document.createElement("a");
