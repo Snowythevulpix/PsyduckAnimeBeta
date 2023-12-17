@@ -150,3 +150,9 @@ body {
 .link:hover {
   background-color: #555;
 }
+#player-container {
+  position: absolute;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
+}
