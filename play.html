@@ -62,11 +62,11 @@
 
               if (responseSources.ok) {
                 const sourcesData = await responseSources.json();
-                // Find the 1080p video URL from the episode data
-                const videourl = sourcesData.sources.find(source => source.quality === "1080p");
+                // Find the auto video URL from the episode data
+                const videourl = sourcesData.sources.find(source => source.quality === "auto");
 
                 if (videourl && videourl.url) {
-                  console.log('1080p Video URL:', videourl.url);
+                  console.log('auto Video URL:', videourl.url);
 
                   // Create the Clappr player using the obtained video URL
                   var player = new Clappr.Player({
@@ -75,7 +75,7 @@
                     // Additional configurations can be added as needed based on the documentation
                   });
                 } else {
-                  console.log('1080p Video URL not found.');
+                  console.log('auto Video URL not found.');
                 }
               } else {
                 console.log(`Failed to fetch episode data for episode ${episode}`);
