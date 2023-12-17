@@ -9,9 +9,27 @@
   <!-- Favicon -->
   <link rel="icon" href="/assets/Psyduck.png"/>
   <link rel="stylesheet" href="/assets/style.css">
+  <!-- Clappr CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 </head>
 <body>
   <!-- Home button image -->
   <a href="/">
     <img class="home-button" src="/assets/logo.png" alt="Home">
   </a>
+
+  <!-- Clappr player container -->
+  <div id="player-container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create the Clappr player
+      var player = new Clappr.Player({
+        source: "https://ia801509.us.archive.org/10/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4",
+        parentId: '#player-container', // Pass the selector string of the container
+        // Additional configurations can be added as needed based on the documentation
+      });
+    });
+  </script>
+</body>
+</html>
