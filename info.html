@@ -96,27 +96,37 @@
     });
 
     function createEpisodeButtons(totalEpisodes) {
-      const episodeLinksContainer = document.getElementById("episode-links");
-      episodeLinksContainer.innerHTML = ''; // Clear the container
+  const episodeLinksContainer = document.getElementById("episode-links");
+  episodeLinksContainer.innerHTML = ''; // Clear the container
 
-      for (let episode = 1; episode <= totalEpisodes; episode++) {
-        let link = document.createElement("a");
-        link.className = "link";
-        link.href = `player.html?${episode}`;
-        link.target = "_self";
-        link.textContent = episode.toString();
+  // Getting the info.html's URL
+  const currentUrl = window.location.href;
+  const idIndex = currentUrl.lastIndexOf('?');
+  const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
 
-        episodeLinksContainer.appendChild(link);
+  for (let episode = 1; episode <= totalEpisodes; episode++) {
+    let link = document.createElement("a");
+    link.className = "link";
 
-        // Insert line breaks after every 5th episode link
-        if (episode % 5 === 0) {
-          episodeLinksContainer.appendChild(document.createElement("br"));
-        }
-      }
+    // Constructing the URL with parameters
+    const playUrl = `play.html?id=${id}&episode=${episode}&source=gogoanime&subtype=sub`;
 
-      // Display the episode links container
-      episodeLinksContainer.style.display = "block";
+    link.href = playUrl;
+    link.target = "_self";
+    link.textContent = episode.toString();
+
+    episodeLinksContainer.appendChild(link);
+
+    // Insert line breaks after every 5th episode link
+    if (episode % 5 === 0) {
+      episodeLinksContainer.appendChild(document.createElement("br"));
     }
+  }
+
+  // Display the episode links container
+  episodeLinksContainer.style.display = "block";
+}
+
   </script>
 </body>
 </html>
