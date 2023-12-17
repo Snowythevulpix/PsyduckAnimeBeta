@@ -22,20 +22,20 @@
   <div id="player-container"></div>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const anilistid = urlParams.get('anilistid');
-    const episode = urlParams.get('episode');
-    const source = urlParams.get('source');
-    const subtype = urlParams.get('subtype');
-  
-    // Printing the variables
-    console.log('anilist id:', anilistid);
-    console.log('episode:', episode);
-    console.log('source:', source);
-    console.log('subtype:', subtype);
-
     document.addEventListener('DOMContentLoaded', async function() {
       try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const anilistid = urlParams.get('anilistid');
+        const episode = urlParams.get('episode');
+        const source = urlParams.get('source');
+        const subtype = urlParams.get('subtype');
+
+        // Printing the variables
+        console.log('anilist id:', anilistid);
+        console.log('episode:', episode);
+        console.log('source:', source);
+        console.log('subtype:', subtype);
+
         // Make API request to fetch data
         const response = await fetch(`https://api.anify.tv/episodes/${anilistid}`);
         if (response.ok) {
@@ -44,9 +44,45 @@
           const providerData = data.find(provider => provider.providerId === source);
           if (providerData) {
             console.log('Provider Data:', providerData);
-            // Access the episodes array within the providerData if needed
             const episodes = providerData.episodes;
-            // Do whatever you want with the episodes array
+
+            // Find the episode object matching the given episode number
+            const targetEpisode = episodes.find(episodeObj => episodeObj.number === parseInt(episode));
+            
+            if (targetEpisode) {
+              console.log('Target Episode:', targetEpisode);
+              // Accessing the id of the target episode
+              const id = targetEpisode.id;
+              console.log('ID:', id);
+
+              const videorequesturl = `https://api.anify.tv/sources?providerId=${source}&watchId=${id}&episodeNumber=${episode}&id=${anilistid}&subType=${subtype}`;
+
+              // Fetch the video URL using videorequesturl
+              const responseSources = await fetch(videorequesturl);
+
+              if (responseSources.ok) {
+                const sourcesData = await responseSources.json();
+                // Find the 1080p video URL from the episode data
+                const videourl = sourcesData.sources.find(source => source.quality === "1080p");
+
+                if (videourl && videourl.url) {
+                  console.log('1080p Video URL:', videourl.url);
+
+                  // Create the Clappr player using the obtained video URL
+                  var player = new Clappr.Player({
+                    source: videourl.url, // Use the fetched video URL as the source
+                    parentId: '#player-container',
+                    // Additional configurations can be added as needed based on the documentation
+                  });
+                } else {
+                  console.log('1080p Video URL not found.');
+                }
+              } else {
+                console.log(`Failed to fetch episode data for episode ${episode}`);
+              }
+            } else {
+              console.log('Episode not found for the given number.');
+            }
           } else {
             console.log('Provider not found for the given source.');
           }
@@ -56,13 +92,6 @@
       } catch (error) {
         console.error('Error fetching provider data:', error);
       }
-      
-      // Create the Clappr player
-      var player = new Clappr.Player({
-        source: "https://ia801200.us.archive.org/20/items/youtube-BbeeuzU5Qc8/BbeeuzU5Qc8.mp4",
-        parentId: '#player-container', // Pass the selector string of the container
-        // Additional configurations can be added as needed based on the documentation
-      });
     });
   </script>
 </body>
