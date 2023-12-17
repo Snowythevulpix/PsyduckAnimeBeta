@@ -22,6 +22,21 @@
   <div id="player-container"></div>
 
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const anilistid = urlParams.get('anilistid');
+    const episode = urlParams.get('episode');
+    const source = urlParams.get('source');
+    const subtype = urlParams.get('subtype');
+  
+    // Printing the variables
+    console.log('anilist id:', anilistid);
+    console.log('episode:', episode);
+    console.log('source:', source);
+    console.log('subtype:', subtype);
+  </script>
+  
+
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Create the Clappr player
       var player = new Clappr.Player({
