@@ -35,6 +35,7 @@
           const data = await response.json();
           const providerData = data.find(provider => provider.providerId === source);
           if (providerData) {
+            console.log('Available Provider IDs:', data.map(provider => provider.providerId)); // Log available provider ids
             const episodes = providerData.episodes;
             const targetEpisode = episodes.find(episodeObj => episodeObj.number === parseInt(episode));
 
