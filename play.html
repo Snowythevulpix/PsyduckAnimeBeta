@@ -62,11 +62,11 @@
 
               if (responseSources.ok) {
                 const sourcesData = await responseSources.json();
-                // Find the auto video URL from the episode data
-                const videourl = sourcesData.sources.find(source => source.quality === "auto");
+                // Find the default video URL from the episode data
+                const videourl = sourcesData.sources.find(source => source.quality === "default");
 
                 if (videourl && videourl.url) {
-                  console.log('auto Video URL:', videourl.url);
+                  console.log('default Video URL:', videourl.url);
 
                   // Create the Clappr player using the obtained video URL
                   var player = new Clappr.Player({
