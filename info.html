@@ -34,65 +34,103 @@
   <div id="episode-links" style="display: none;">
     <!-- This is where episode links will be added -->
   </div>
-
   <script>
     let scrolled = false; // Variable to track if the scroll condition was met
     let totalEpisodes = 0; // Variable to store the total episodes
     let subtype = null; // Variable to store the user's selection
-
+  
+    function updateSource(id, subtype) {
+      fetch('./assets/bestsource.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const source = data[id] ? data[id][subtype] : null;
+          if (source) {
+            const episodeLinksContainer = document.getElementById('episode-links');
+            const links = episodeLinksContainer.querySelectorAll('.link');
+            links.forEach((link, index) => {
+              const episode = index + 1;
+              const playUrl = `play.html?anilistid=${id}&episode=${episode}&source=${source}&subtype=${subtype}`;
+              link.href = playUrl;
+            });
+          } else {
+            console.error('Source not found in JSON file');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching JSON file:', error);
+        });
+    }
+  
     function selectSub() {
       subtype = 'sub';
-      showEpisodeButtons();
+      const currentUrl = window.location.href;
+      const idIndex = currentUrl.lastIndexOf('?');
+      const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
+      if (id) {
+        updateSource(id, subtype);
+        showEpisodeButtons();
+      } else {
+        console.error('No ID found in the URL');
+      }
     }
-
+  
     function selectDub() {
       subtype = 'dub';
-      showEpisodeButtons();
+      const currentUrl = window.location.href;
+      const idIndex = currentUrl.lastIndexOf('?');
+      const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
+      if (id) {
+        updateSource(id, subtype);
+        showEpisodeButtons();
+      } else {
+        console.error('No ID found in the URL');
+      }
     }
-
+  
     function showEpisodeButtons() {
       document.getElementById('sub-dub-buttons').style.display = 'none';
       document.getElementById('episode-links').style.display = 'block';
       createEpisodeButtons(totalEpisodes, subtype);
     }
-
+  
     function createEpisodeButtons(totalEpisodes, subtype) {
       const episodeLinksContainer = document.getElementById('episode-links');
       episodeLinksContainer.innerHTML = ''; // Clear the container
-
-      // Getting the info.html's URL
+  
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
       const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-
+  
       for (let episode = 1; episode <= totalEpisodes; episode++) {
         let link = document.createElement('a');
         link.className = 'link';
-
-        // Constructing the URL with parameters
+  
         const playUrl = `play.html?anilistid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
-
+  
         link.href = playUrl;
         link.target = '_self';
         link.textContent = episode.toString();
-
+  
         episodeLinksContainer.appendChild(link);
-
-        // Insert line breaks after every 5th episode link
+  
         if (episode % 5 === 0) {
           episodeLinksContainer.appendChild(document.createElement('br'));
         }
       }
-
-      // Display the episode links container
+  
       episodeLinksContainer.style.display = 'block';
     }
-
+  
     window.addEventListener('DOMContentLoaded', () => {
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
       const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-
+  
       if (id) {
         fetch(`https://api.anify.tv/info/${id}`)
           .then(response => {
@@ -103,27 +141,25 @@
           })
           .then(data => {
             const total = data.totalEpisodes || 0;
-
+  
             const artwork = data.artwork.find(item => item.type === 'poster' && item.providerId === 'anilist');
             const englishName = data.english || '';
             const description = data.description || '';
             const englishTitle = data.title.english || 'Not available';
             const romajiTitle = data.title.romaji || 'Not available';
             const nativeTitle = data.title.native || 'Not available';
-
+  
             const artworkImg = document.querySelector('.artwork');
             artworkImg.src = artwork ? artwork.img : '';
-
+  
             const descriptionElement = document.querySelector('.description');
             descriptionElement.textContent = description;
-
+  
             const titleElement = document.querySelector('.title-info');
             titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}\nNative: ${nativeTitle}`;
-
-            // Set total episodes fetched from the API
+  
             totalEpisodes = total;
-
-            // Display the sub-dub buttons after fetching the data
+  
             document.getElementById('sub-dub-buttons').style.display = 'block';
           })
           .catch(error => {
