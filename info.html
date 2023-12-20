@@ -48,7 +48,15 @@
           return response.json();
         })
         .then(data => {
-          const source = data[id] ? data[id][subtype] : null;
+          let source = null;
+  
+          // Find the source for the given ID
+          data.forEach(item => {
+            if (item[id]) {
+              source = item[id][subtype];
+            }
+          });
+  
           if (source) {
             const episodeLinksContainer = document.getElementById('episode-links');
             const links = episodeLinksContainer.querySelectorAll('.link');
@@ -170,5 +178,6 @@
       }
     });
   </script>
+  
 </body>
 </html>
