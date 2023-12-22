@@ -18,7 +18,7 @@ To start using PsyduckAnime:
 ## Credits
 
 - **Developer**: [Vulpix500](https://twitter.com/vulpix500)
-- **Helper**: [Danny_woof](https://twitter.com/danny_woof24)
+- **Helper**: [Danny_woof](https://twitter.com/dannywoof24)
 
 ## Contributing
 
