@@ -12,7 +12,7 @@ PsyduckAnime is an online platform dedicated to offering a seamless, ad-free exp
 
 To start using PsyduckAnime:
 1. Visit [PsyduckAnime](https://www.psyduckanime.lol).
-2. Create an account or log in.
+2. Login with your discord account to sync login (tba).
 3. Browse through the collection and start watching your favorite Pokémon episodes hassle-free.
 
 ## Credits
