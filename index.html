@@ -1,49 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login with Discord</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        img {
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <link rel="stylesheet" type="text/css" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <a href="https://discord.com/api/oauth2/authorize?client_id=1188200320585707621&response_type=token&redirect_uri=https%3A%2F%2Fbeta.psyduckanime.lol&scope=identify">
-        <img src="/assets/loginwithdiscord.png" alt="Login with Discord" id="discordLogin">
-    </a>
+    <div class="flex items-center justify-center h-screen bg-discord-gray text-white flex-col">
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1188200320585707621&response_type=token&redirect_uri=https%3A%2F%2Fbeta.psyduckanime.lol&scope=identify">
+            <img src='/assets/loginwithdiscord.png' id="loginButton" class="cursor-pointer"/>
+        </a>
+        <div class="text-2xl" id="welcomeMessage">Welcome!</div>
+        <div class="text-4xl mt-3 flex items-center font-medium">
+            <img src='' id="avatar" class="rounded-full w-12 h-12 mr-3"/>
+            <div id="name"></div>
+        </div>
+        <a href="/" class="text-sm mt-5">Continue</a>
+    </div>
 
     <script>
-        // Function to get the username after logging in
-        function getUsername() {
-            // Simulating the retrieval of the username after login
-            const accessToken = 'example_access_token'; // Replace this with the actual access token obtained after login
+        window.onload = () => {
+            const fragment = new URLSearchParams(window.location.hash.slice(1));
+            const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const loginButton = document.getElementById('loginButton');
+
+            if (!accessToken) {
+                loginButton.style.display = 'block';
+                return;
+            }
+
             fetch('https://discord.com/api/users/@me', {
                 headers: {
-                    Authorization: `Bearer ${accessToken}`
-                }
+                    authorization: `${tokenType} ${accessToken}`,
+                },
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Username:', data.username);
-                // You can use this username as needed on the page
-                const usernameElement = document.createElement('p');
-                usernameElement.textContent = `Logged in as: ${data.username}`;
-                document.body.appendChild(usernameElement);
-            })
-            .catch(error => console.error('Error:', error));
-        }
+            .then(result => result.json())
+            .then(response => {
+                const { username, discriminator, avatar, id } = response;
 
-        // Attach event listener to the image for login
-        document.getElementById('discordLogin').addEventListener('click', getUsername);
+                // Set the welcome username string
+                welcomeMessage.innerText = `Hello ${username}, please press below to continue`;
+
+                // Set the avatar image by constructing a URL to access Discord's CDN
+                const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+                document.getElementById("avatar").src = avatarUrl;
+
+                // Save the avatar URL locally using localStorage
+                localStorage.setItem('avatarUrl', avatarUrl);
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+                // Handle errors here (e.g., display an error message)
+            });
+        };
     </script>
 </body>
 </html>
