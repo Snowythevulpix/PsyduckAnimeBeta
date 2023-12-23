@@ -1,0 +1,1024 @@
+[
+  {
+    "EpisodeID": "SM001",
+    "EnglishTitle": "Alola to New Adventure!",
+    "TranslatedTitle": "Alola! The Starting Island, the Starter pokemon!!",
+    "AirDateUS": "December 5, 2016",
+    "AirDateJP": "November 17, 2016"
+  },
+  {
+    "EpisodeID": "SM002",
+    "EnglishTitle": "The Guardian's Challenge!",
+    "TranslatedTitle": "Tapu Koko}} Appears! Challenge, Our Z-Move!!",
+    "AirDateUS": "December 5, 2016",
+    "AirDateJP": "November 17, 2016"
+  },
+  {
+    "EpisodeID": "SM003",
+    "EnglishTitle": "Loading the Dex!",
+    "TranslatedTitle": "Hello, Roto, I'm the Rotom Pokédex, Roto!",
+    "AirDateUS": "May 13, 2017",
+    "AirDateJP": "November 24, 2016"
+  },
+  {
+    "EpisodeID": "SM004",
+    "EnglishTitle": "First Catch in Alola, Ketchum-Style!",
+    "TranslatedTitle": "Rowlet}}! Catching pokemon in Alola!!",
+    "AirDateUS": "May 14, 2017",
+    "AirDateJP": "November 24, 2016"
+  },
+  {
+    "EpisodeID": "SM005",
+    "EnglishTitle": "Yo, Ho, Ho! Go, Popplio!",
+    "TranslatedTitle": "Popplio}}, Give it Your bALLoon!",
+    "AirDateUS": "May 15, 2017",
+    "AirDateJP": "December 1, 2016"
+  },
+  {
+    "EpisodeID": "SM006",
+    "EnglishTitle": "A Shocking Grocery Run!",
+    "TranslatedTitle": "Zing Zap}} Togedemaru!",
+    "AirDateUS": "May 16, 2017",
+    "AirDateJP": "December 8, 2016"
+  },
+  {
+    "EpisodeID": "SM007",
+    "EnglishTitle": "That's Why the Litten is a Scamp!",
+    "TranslatedTitle": "Litten}}!",
+    "AirDateUS": "May 17, 2017",
+    "AirDateJP": "December 15, 2016"
+  },
+  {
+    "EpisodeID": "SM008",
+    "EnglishTitle": "Lillie's Egg-xhilarating Challenge!",
+    "TranslatedTitle": "Who'll Be in Charge of the Egg?",
+    "AirDateUS": "May 18, 2017",
+    "AirDateJP": "December 22, 2016"
+  },
+  {
+    "EpisodeID": "SM009",
+    "EnglishTitle": "To Top a Totem!",
+    "TranslatedTitle": "Gumshoos}}!",
+    "AirDateUS": "May 19, 2017",
+    "AirDateJP": "January 5, 2017"
+  },
+  {
+    "EpisodeID": "SM010",
+    "EnglishTitle": "Trial and Tribulation!",
+    "TranslatedTitle": "Will the Z-Move Work! Challenge the Grand Trial!!",
+    "AirDateUS": "May 20, 2017",
+    "AirDateJP": "January 12, 2017"
+  },
+  {
+    "EpisodeID": "SM011",
+    "EnglishTitle": "Young Kiawe Had a Farm!",
+    "TranslatedTitle": "Kiawe}}!",
+    "AirDateUS": "May 27, 2017",
+    "AirDateJP": "January 19, 2017"
+  },
+  {
+    "EpisodeID": "SM012",
+    "EnglishTitle": "The Sun, the Scare, the Secret Lair!",
+    "TranslatedTitle": "Mareanie}}!?",
+    "AirDateUS": "June 3, 2017",
+    "AirDateJP": "January 26, 2017"
+  },
+  {
+    "EpisodeID": "SM013",
+    "EnglishTitle": "Racing to a Big Event!",
+    "TranslatedTitle": "The Big Alola Pancake Race!",
+    "AirDateUS": "June 10, 2017",
+    "AirDateJP": "February 2, 2017"
+  },
+  {
+    "EpisodeID": "SM014",
+    "EnglishTitle": "Getting to Know You!",
+    "TranslatedTitle": "Vulpix}}!",
+    "AirDateUS": "June 17, 2017",
+    "AirDateJP": "February 9, 2017"
+  },
+  {
+    "EpisodeID": "SM015",
+    "EnglishTitle": "Rocking Clawmark Hill!",
+    "TranslatedTitle": "Lycanroc}}!!",
+    "AirDateUS": "June 24, 2017",
+    "AirDateJP": "February 23, 2017"
+  },
+  {
+    "EpisodeID": "SM016",
+    "EnglishTitle": "They Might Not Be Giants!",
+    "TranslatedTitle": "A Small Trio on a Big Adventure!!",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "March 2, 2017"
+  },
+  {
+    "EpisodeID": "SM017",
+    "EnglishTitle": "Crystal-Clear Sleuthing!",
+    "TranslatedTitle": "Alola Detective Rotom! The Mystery of the Missing Crystal!!",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "March 9, 2017"
+  },
+  {
+    "EpisodeID": "SM018",
+    "EnglishTitle": "A Seasoned Search!",
+    "TranslatedTitle": "Mallow}}'s Great Cooking Operation!!",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "March 16, 2017"
+  },
+  {
+    "EpisodeID": "SM019",
+    "EnglishTitle": "A Guardian Rematch!",
+    "TranslatedTitle": "Tapu Koko}}!!",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "March 23, 2017"
+  },
+  {
+    "EpisodeID": "SM020",
+    "EnglishTitle": "Partner Promises!",
+    "TranslatedTitle": "Ash}} and Pikachu, the Promise between Them",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "April 6, 2017"
+  },
+  {
+    "EpisodeID": "SM021",
+    "EnglishTitle": "One Journey Ends, Another Begins...",
+    "TranslatedTitle": "Litten}}, Time to Begin the Journey!",
+    "AirDateUS": "July 1, 2017",
+    "AirDateJP": "April 6, 2017"
+  },
+  {
+    "EpisodeID": "SM022",
+    "EnglishTitle": "A Shivering Shovel Search!",
+    "TranslatedTitle": "Beware of Shovels!!!",
+    "AirDateUS": "July 8, 2017",
+    "AirDateJP": "April 13, 2017"
+  },
+  {
+    "EpisodeID": "SM023",
+    "EnglishTitle": "Getting the Band Back Together!",
+    "TranslatedTitle": "Shocking! Dugtrio Split Up!?",
+    "AirDateUS": "July 15, 2017",
+    "AirDateJP": "April 20, 2017"
+  },
+  {
+    "EpisodeID": "SM024",
+    "EnglishTitle": "Alolan Open House!",
+    "TranslatedTitle": "Alola! The First Visiting Day!!",
+    "AirDateUS": "July 22, 2017",
+    "AirDateJP": "April 27, 2017"
+  },
+  {
+    "EpisodeID": "SM025",
+    "EnglishTitle": "A Team-on-Team Tussle!",
+    "TranslatedTitle": "Team Skull}}!!",
+    "AirDateUS": "July 29, 2017",
+    "AirDateJP": "May 4, 2017"
+  },
+  {
+    "EpisodeID": "SM026",
+    "EnglishTitle": "So Long, Sophocles!",
+    "TranslatedTitle": "Sophocles}}!",
+    "AirDateUS": "August 5, 2017",
+    "AirDateJP": "May 11, 2017"
+  },
+  {
+    "EpisodeID": "SM027",
+    "EnglishTitle": "A Glaring Rivalry!",
+    "TranslatedTitle": "Lycanroc}}!!",
+    "AirDateUS": "August 19, 2017",
+    "AirDateJP": "May 18, 2017"
+  },
+  {
+    "EpisodeID": "SM028",
+    "EnglishTitle": "Pulling Out the pokemon Base Pepper!",
+    "TranslatedTitle": "pokemon Base}} Match! Aim for a Home Run to Turn the Tide!!",
+    "AirDateUS": "August 26, 2017",
+    "AirDateJP": "May 25, 2017"
+  },
+  {
+    "EpisodeID": "SM029",
+    "EnglishTitle": "Lulled to La-La Land!",
+    "TranslatedTitle": "Morelull}} Forest Too?",
+    "AirDateUS": "September 2, 2017",
+    "AirDateJP": "June 8, 2017"
+  },
+  {
+    "EpisodeID": "SM030",
+    "EnglishTitle": "The Ol' Raise and Switch!",
+    "TranslatedTitle": "Lillie}}, Take Good Care of Pikachu",
+    "AirDateUS": "September 9, 2017",
+    "AirDateJP": "June 15, 2017"
+  },
+  {
+    "EpisodeID": "SM031",
+    "EnglishTitle": "The Island Whisperer!",
+    "TranslatedTitle": "Island Kahuna}}!!",
+    "AirDateUS": "September 16, 2017",
+    "AirDateJP": "June 22, 2017"
+  },
+  {
+    "EpisodeID": "SM032",
+    "EnglishTitle": "Treasure Hunt, Akala Style!",
+    "TranslatedTitle": "Stoutland}} Search!!",
+    "AirDateUS": "September 23, 2017",
+    "AirDateJP": "June 29, 2017"
+  },
+  {
+    "EpisodeID": "SM033",
+    "EnglishTitle": "Big Sky, Small Fry!",
+    "TranslatedTitle": "Totem}} of the Lake!",
+    "AirDateUS": "September 30, 2017",
+    "AirDateJP": "July 6, 2017"
+  },
+  {
+    "EpisodeID": "SM034",
+    "EnglishTitle": "A Crowning Moment of Truth!",
+    "TranslatedTitle": "Marowak}} Appears!!",
+    "AirDateUS": "October 7, 2017",
+    "AirDateJP": "July 20, 2017"
+  },
+  {
+    "EpisodeID": "SM035",
+    "EnglishTitle": "Currying Favor and Flavor!",
+    "TranslatedTitle": "Lurantis}}!!",
+    "AirDateUS": "October 14, 2017",
+    "AirDateJP": "July 27, 2017"
+  },
+  {
+    "EpisodeID": "SM036",
+    "EnglishTitle": "Trials and Determinations!",
+    "TranslatedTitle": "Olivia}}'s Grand Trial! The Hardest pokemon Match!!",
+    "AirDateUS": "October 21, 2017",
+    "AirDateJP": "August 3, 2017"
+  },
+  {
+    "EpisodeID": "SM037",
+    "EnglishTitle": "Rising from the Ruins!",
+    "TranslatedTitle": "Rockruff}} and the Guardian Deity of the Ruins of Life!",
+    "AirDateUS": "October 28, 2017",
+    "AirDateJP": "August 10, 2017"
+  },
+  {
+    "EpisodeID": "SM038",
+    "EnglishTitle": "Mimikyu Unmasked!",
+    "TranslatedTitle": "Mimikyu}}'s Disguise!",
+    "AirDateUS": "November 4, 2017",
+    "AirDateJP": "August 17, 2017"
+  },
+  {
+    "EpisodeID": "SM039",
+    "EnglishTitle": "Mallow and the Forest Teacher!",
+    "TranslatedTitle": "Oranguru}}!",
+    "AirDateUS": "November 11, 2017",
+    "AirDateJP": "August 24, 2017"
+  },
+  {
+    "EpisodeID": "SM040",
+    "EnglishTitle": "Balloons, Brionne, and Belligerence!",
+    "TranslatedTitle": "Dhelmise}}!",
+    "AirDateUS": "November 18, 2017",
+    "AirDateJP": "August 31, 2017"
+  },
+  {
+    "EpisodeID": "SM041",
+    "EnglishTitle": "Mounting an Electrifying Charge!",
+    "TranslatedTitle": "Charjabug}}",
+    "AirDateUS": "November 25, 2017",
+    "AirDateJP": "September 7, 2017"
+  },
+  {
+    "EpisodeID": "SM042",
+    "EnglishTitle": "Alola, Kanto!",
+    "TranslatedTitle": "Misty}}!!",
+    "AirDateUS": "November 25, 2017",
+    "AirDateJP": "September 14, 2017"
+  },
+  {
+    "EpisodeID": "SM043",
+    "EnglishTitle": "When Regions Collide!",
+    "TranslatedTitle": "Gym Battle! Z-Move VS Mega Evolution!!",
+    "AirDateUS": "December 9, 2017",
+    "AirDateJP": "September 21, 2017"
+  },
+  {
+    "EpisodeID": "SM044",
+    "EnglishTitle": "A Dream Encounter!",
+    "TranslatedTitle": "Nebby}}! Mysterious Encounter!!",
+    "AirDateUS": "March 24, 2018",
+    "AirDateJP": "October 5, 2017"
+  },
+  {
+    "EpisodeID": "SM045",
+    "EnglishTitle": "Now You See Them, Now You Don't!",
+    "TranslatedTitle": "Nebby}} Panic! A Sudden Teleport!!",
+    "AirDateUS": "March 25, 2018",
+    "AirDateJP": "October 12, 2017"
+  },
+  {
+    "EpisodeID": "SM046",
+    "EnglishTitle": "Deceiving Appearances!",
+    "TranslatedTitle": "Ditto}}, Find that 'mon!",
+    "AirDateUS": "March 26, 2018",
+    "AirDateJP": "October 19, 2017"
+  },
+  {
+    "EpisodeID": "SM047",
+    "EnglishTitle": "A Masked Warning!",
+    "TranslatedTitle": "Silvally}}! The Mask of Punishment!!",
+    "AirDateUS": "March 27, 2018",
+    "AirDateJP": "October 26, 2017"
+  },
+  {
+    "EpisodeID": "SM048",
+    "EnglishTitle": "Night of a Thousand Poses!",
+    "TranslatedTitle": "Full Force Pose at the Sleepover!",
+    "AirDateUS": "March 28, 2018",
+    "AirDateJP": "November 2, 2017"
+  },
+  {
+    "EpisodeID": "SM049",
+    "EnglishTitle": "Mission: Total Recall!",
+    "TranslatedTitle": "Silvally}}, the Resurrected Memory!",
+    "AirDateUS": "March 29, 2018",
+    "AirDateJP": "November 9, 2017"
+  },
+  {
+    "EpisodeID": "SM050",
+    "EnglishTitle": "Faba's Revenge!",
+    "TranslatedTitle": "Nebby}}!! ",
+    "AirDateUS": "March 30, 2018",
+    "AirDateJP": "November 16, 2017"
+  },
+  {
+    "EpisodeID": "SM051",
+    "EnglishTitle": "Family Determination!",
+    "TranslatedTitle": "Lillie}}! A Determined Runaway!! ",
+    "AirDateUS": "March 31, 2018",
+    "AirDateJP": "November 23, 2017"
+  },
+  {
+    "EpisodeID": "SM052",
+    "EnglishTitle": "Revealing the Stuff of Legend!",
+    "TranslatedTitle": "Sunne}}! Solgaleo Descends!! ",
+    "AirDateUS": "April 7, 2018",
+    "AirDateJP": "November 30, 2017"
+  },
+  {
+    "EpisodeID": "SM053",
+    "EnglishTitle": "Rescuing the Unwilling!",
+    "TranslatedTitle": "Hurry! The Great Lusamine Rescue Operation!!",
+    "AirDateUS": "April 14, 2018",
+    "AirDateJP": "December 7, 2017"
+  },
+  {
+    "EpisodeID": "SM054",
+    "EnglishTitle": "10,000,000 Reasons to Fight!",
+    "TranslatedTitle": "10,000,000 Volt Thunderbolt}}!!",
+    "AirDateUS": "April 21, 2018",
+    "AirDateJP": "December 14, 2017"
+  },
+  {
+    "EpisodeID": "SM055",
+    "EnglishTitle": "The Professors' New Adventure!",
+    "TranslatedTitle": "Nebby}}!!",
+    "AirDateUS": "April 28, 2018",
+    "AirDateJP": "December 21, 2017"
+  },
+  {
+    "EpisodeID": "SM056",
+    "EnglishTitle": "Let Sleeping pokemon Lie!",
+    "TranslatedTitle": "Komala}}'s Secret!",
+    "AirDateUS": "May 5, 2018",
+    "AirDateJP": "December 28, 2017"
+  },
+  {
+    "EpisodeID": "SM057",
+    "EnglishTitle": "The Dex Can't Help It!",
+    "TranslatedTitle": "Rotom, Can't Stop the Form Change!",
+    "AirDateUS": "May 12, 2018",
+    "AirDateJP": "January 11, 2018"
+  },
+  {
+    "EpisodeID": "SM058",
+    "EnglishTitle": "Fighting Back the Tears!",
+    "TranslatedTitle": "Mareanie}}!",
+    "AirDateUS": "May 19, 2018",
+    "AirDateJP": "January 18, 2018"
+  },
+  {
+    "EpisodeID": "SM059",
+    "EnglishTitle": "Tasting the Bitter with the Sweet!",
+    "TranslatedTitle": "Lana}}, the Bittersweet Memories!",
+    "AirDateUS": "July 2, 2018",
+    "AirDateJP": "January 25, 2018"
+  },
+  {
+    "EpisodeID": "SM060",
+    "EnglishTitle": "Getting a Jump on the Competition!",
+    "TranslatedTitle": "pokemon Sled Jump Games}}!!",
+    "AirDateUS": "July 9, 2018",
+    "AirDateJP": "February 1, 2018"
+  },
+  {
+    "EpisodeID": "SM061",
+    "EnglishTitle": "A Mission of Ultra Urgency!",
+    "TranslatedTitle": "Set Off! Our Ultra Guardians!!",
+    "AirDateUS": "July 16, 2018",
+    "AirDateJP": "February 8, 2018"
+  },
+  {
+    "EpisodeID": "SM062",
+    "EnglishTitle": "Acting True to Form!",
+    "TranslatedTitle": "Meowth}} is an Alolan Nyarth!?",
+    "AirDateUS": "July 23, 2018",
+    "AirDateJP": "February 15, 2018"
+  },
+  {
+    "EpisodeID": "SM063",
+    "EnglishTitle": "Pushing the Fiery Envelope!",
+    "TranslatedTitle": "Incineroar}}!!",
+    "AirDateUS": "July 30, 2018",
+    "AirDateJP": "February 22, 2018"
+  },
+  {
+    "EpisodeID": "SM064",
+    "EnglishTitle": "None",
+    "TranslatedTitle": "Passimian}}! Touchdown of Friendship!!",
+    "AirDateUS": "None",
+    "AirDateJP": "March 1, 2018"
+  },
+  {
+    "EpisodeID": "SM065",
+    "EnglishTitle": "Turning Heads and Training Hard!",
+    "TranslatedTitle": "Eevee}} IliMake Their Entrance!!",
+    "AirDateUS": "August 6, 2018",
+    "AirDateJP": "March 8, 2018"
+  },
+  {
+    "EpisodeID": "SM066",
+    "EnglishTitle": "Smashing with Sketch!",
+    "TranslatedTitle": "Smash with Sketch! The Fierce Fighting Poké-Ping Pong!",
+    "AirDateUS": "August 13, 2018",
+    "AirDateJP": "March 15, 2018"
+  },
+  {
+    "EpisodeID": "SM067",
+    "EnglishTitle": "Love at First Twirl!",
+    "TranslatedTitle": "Poipole}}!!",
+    "AirDateUS": "August 25, 2018",
+    "AirDateJP": "March 22, 2018"
+  },
+  {
+    "EpisodeID": "SM068",
+    "EnglishTitle": "Real Life...Inquire Within!",
+    "TranslatedTitle": "Work Experience! 24-Hour pokemon Center!!",
+    "AirDateUS": "September 1, 2018",
+    "AirDateJP": "April 5, 2018"
+  },
+  {
+    "EpisodeID": "SM069",
+    "EnglishTitle": "Rise and Shine, Starship!",
+    "TranslatedTitle": "Celesteela}}!",
+    "AirDateUS": "September 8, 2018",
+    "AirDateJP": "April 12, 2018"
+  },
+  {
+    "EpisodeID": "SM070",
+    "EnglishTitle": "The Young Flame Strikes Back!",
+    "TranslatedTitle": "Protect the Ranch! The Blue Flame's Counterattack!!",
+    "AirDateUS": "September 15, 2018",
+    "AirDateJP": "April 19, 2018"
+  },
+  {
+    "EpisodeID": "SM071",
+    "EnglishTitle": "Dewpider Ascending!",
+    "TranslatedTitle": "Lana}}!",
+    "AirDateUS": "September 22, 2018",
+    "AirDateJP": "April 26, 2018"
+  },
+  {
+    "EpisodeID": "SM072",
+    "EnglishTitle": "Sours for the Sweet!",
+    "TranslatedTitle": "Mallow}}'s Family!!",
+    "AirDateUS": "September 29, 2018",
+    "AirDateJP": "April 26, 2018"
+  },
+  {
+    "EpisodeID": "SM073",
+    "EnglishTitle": "Why Not Give Me a Z-Ring Sometime?",
+    "TranslatedTitle": "Island Challenge}}!? Get the Z-Ring!!",
+    "AirDateUS": "October 6, 2018",
+    "AirDateJP": "May 3, 2018"
+  },
+  {
+    "EpisodeID": "SM074",
+    "EnglishTitle": "Tough Guy Trials!",
+    "TranslatedTitle": "Island Kahuna}}!?",
+    "AirDateUS": "October 13, 2018",
+    "AirDateJP": "May 10, 2018"
+  },
+  {
+    "EpisodeID": "SM075",
+    "EnglishTitle": "Some Kind of Laziness!",
+    "TranslatedTitle": "Tapu Bulu}}! Intense Lazy Training!!",
+    "AirDateUS": "October 20, 2018",
+    "AirDateJP": "May 17, 2018"
+  },
+  {
+    "EpisodeID": "SM076",
+    "EnglishTitle": "A Battle Hand-Off!",
+    "TranslatedTitle": "Mimikyu}}!!",
+    "AirDateUS": "October 27, 2018",
+    "AirDateJP": "May 24, 2018"
+  },
+  {
+    "EpisodeID": "SM077",
+    "EnglishTitle": "Guiding an Awakening!",
+    "TranslatedTitle": "Lycanroc}} Awakens!!",
+    "AirDateUS": "November 3, 2018",
+    "AirDateJP": "May 31, 2018"
+  },
+  {
+    "EpisodeID": "SM078",
+    "EnglishTitle": "Twirling with a Bang!",
+    "TranslatedTitle": "Ultra Beast Clash! The Great Crackling Rumble Operation!!",
+    "AirDateUS": "November 10, 2018",
+    "AirDateJP": "June 7, 2018"
+  },
+  {
+    "EpisodeID": "SM079",
+    "EnglishTitle": "Showering the World with Love!",
+    "TranslatedTitle": "Poipole}}, the Promise that Disappeared into the Starry Sky!",
+    "AirDateUS": "November 17, 2018",
+    "AirDateJP": "June 14, 2018"
+  },
+  {
+    "EpisodeID": "SM080",
+    "EnglishTitle": "Not Caving Under Pressure!",
+    "TranslatedTitle": "Sandshrew}}'s Storm! Ice Cave Double Battle!!",
+    "AirDateUS": "November 24, 2018",
+    "AirDateJP": "June 28, 2018"
+  },
+  {
+    "EpisodeID": "SM081",
+    "EnglishTitle": "A Young Royal Flame Ignites!",
+    "TranslatedTitle": "Ash Royal}}'s Birth!!",
+    "AirDateUS": "December 1, 2018",
+    "AirDateJP": "July 5, 2018"
+  },
+  {
+    "EpisodeID": "SM082",
+    "EnglishTitle": "All They Want to Do is Dance Dance!",
+    "TranslatedTitle": "Dance Dance in Evolution?",
+    "AirDateUS": "December 8, 2018",
+    "AirDateJP": "July 19, 2018"
+  },
+  {
+    "EpisodeID": "SM083",
+    "EnglishTitle": "Dummy, You Shrunk the Kids!",
+    "TranslatedTitle": "Ash}} Becomes Small",
+    "AirDateUS": "December 15, 2018",
+    "AirDateJP": "July 26, 2018"
+  },
+  {
+    "EpisodeID": "SM084",
+    "EnglishTitle": "The Shape of Love to Come!",
+    "TranslatedTitle": "Poipole}}'s Feelings!",
+    "AirDateUS": "December 22, 2018",
+    "AirDateJP": "August 2, 2018"
+  },
+  {
+    "EpisodeID": "SM085",
+    "EnglishTitle": "The Long Vault Home!",
+    "TranslatedTitle": "Stakataka}}!",
+    "AirDateUS": "December 29, 2018",
+    "AirDateJP": "August 9, 2018"
+  },
+  {
+    "EpisodeID": "SM086",
+    "EnglishTitle": "I Choose Paradise!",
+    "TranslatedTitle": "I Choose Here! pokemon Hot Spring Paradise!!",
+    "AirDateUS": "January 12, 2019",
+    "AirDateJP": "August 16, 2018"
+  },
+  {
+    "EpisodeID": "SM087",
+    "EnglishTitle": "Filling the Light with Darkness!",
+    "TranslatedTitle": "A Crisis in Alola! The Darkness that Devours Radiance!!",
+    "AirDateUS": "January 19, 2019",
+    "AirDateJP": "August 23, 2018"
+  },
+  {
+    "EpisodeID": "SM088",
+    "EnglishTitle": "Full Moon and Many Arms!",
+    "TranslatedTitle": "UB Black}}! A Full Moon Battle!!",
+    "AirDateUS": "January 26, 2019",
+    "AirDateJP": "August 30, 2018"
+  },
+  {
+    "EpisodeID": "SM089",
+    "EnglishTitle": "The Prism Between Light and Darkness!",
+    "TranslatedTitle": "The Prism of Light and Darkness - Its Name is Necrozma!!",
+    "AirDateUS": "February 2, 2019",
+    "AirDateJP": "September 6, 2018"
+  },
+  {
+    "EpisodeID": "SM090",
+    "EnglishTitle": "Securing the Future!",
+    "TranslatedTitle": "Blinding One}}!!",
+    "AirDateUS": "February 9, 2019",
+    "AirDateJP": "September 13, 2018"
+  },
+  {
+    "EpisodeID": "SM091",
+    "EnglishTitle": "A Plethora of Pikachu!",
+    "TranslatedTitle": "It's a Pikachu Outbreak! The Pikachu Valley!!",
+    "AirDateUS": "February 16, 2019",
+    "AirDateJP": "October 7, 2018"
+  },
+  {
+    "EpisodeID": "SM092",
+    "EnglishTitle": "Turning the Other Mask!",
+    "TranslatedTitle": "Masked Royal}}!!",
+    "AirDateUS": "February 23, 2019",
+    "AirDateJP": "October 14, 2018"
+  },
+  {
+    "EpisodeID": "SM093",
+    "EnglishTitle": "Lillier and the Staff!",
+    "TranslatedTitle": "Lillier}} and the Staff of Alola!",
+    "AirDateUS": "March 23, 2019",
+    "AirDateJP": "October 21, 2018"
+  },
+  {
+    "EpisodeID": "SM094",
+    "EnglishTitle": "A Haunted House for Everyone!",
+    "TranslatedTitle": "Great Gathering of Ghost pokemon! Everyone's Haunted House!!",
+    "AirDateUS": "March 24, 2019",
+    "AirDateJP": "October 28, 2018"
+  },
+  {
+    "EpisodeID": "SM095",
+    "EnglishTitle": "Sparking Confusion!",
+    "TranslatedTitle": "Hikers}}!",
+    "AirDateUS": "March 25, 2019",
+    "AirDateJP": "November 4, 2018"
+  },
+  {
+    "EpisodeID": "SM096",
+    "EnglishTitle": "Don't Ignore the Small Stufful!",
+    "TranslatedTitle": "Stufful}}!",
+    "AirDateUS": "March 26, 2019",
+    "AirDateJP": "November 11, 2018"
+  },
+  {
+    "EpisodeID": "SM097",
+    "EnglishTitle": "No Stone Unturned!",
+    "TranslatedTitle": "Rowlet}} zzz",
+    "AirDateUS": "March 27, 2019",
+    "AirDateJP": "November 18, 2018"
+  },
+  {
+    "EpisodeID": "SM098",
+    "EnglishTitle": "Bright Lights, Big Changes!",
+    "TranslatedTitle": "Ash}} and Rotom",
+    "AirDateUS": "March 28, 2019",
+    "AirDateJP": "November 25, 2018"
+  },
+  {
+    "EpisodeID": "SM099",
+    "EnglishTitle": "We Know Where You're Going, Eevee!",
+    "TranslatedTitle": "Eevee}}, Where Are You Going? To Go Anywhere to Meet Up!",
+    "AirDateUS": "March 29, 2019",
+    "AirDateJP": "December 2, 2018"
+  },
+  {
+    "EpisodeID": "SM100",
+    "EnglishTitle": "Battling the Beast Within!",
+    "TranslatedTitle": "The Lighting Bolt that Severs the Wind! Its Name is Zeraora!!",
+    "AirDateUS": "March 30, 2019",
+    "AirDateJP": "December 9, 2018"
+  },
+  {
+    "EpisodeID": "SM101",
+    "EnglishTitle": "Parallel Friendships!",
+    "TranslatedTitle": "Gigavolt Havoc}} of Friendship!!",
+    "AirDateUS": "April 6, 2019",
+    "AirDateJP": "December 16, 2018"
+  },
+  {
+    "EpisodeID": "SM102",
+    "EnglishTitle": "Alola, Alola!",
+    "TranslatedTitle": "Misty}}!!",
+    "AirDateUS": "April 20, 2019",
+    "AirDateJP": "December 23, 2018"
+  },
+  {
+    "EpisodeID": "SM103",
+    "EnglishTitle": "Heart of Fire! Heart of Stone!",
+    "TranslatedTitle": "Brock}}!!",
+    "AirDateUS": "April 27, 2019",
+    "AirDateJP": "January 6, 2019"
+  },
+  {
+    "EpisodeID": "SM104",
+    "EnglishTitle": "That's Some Spicy Island Research!",
+    "TranslatedTitle": "Island Kahuna}}!!",
+    "AirDateUS": "May 4, 2019",
+    "AirDateJP": "January 13, 2019"
+  },
+  {
+    "EpisodeID": "SM105",
+    "EnglishTitle": "Showdown on Poni Island!",
+    "TranslatedTitle": "Gladion}}!!",
+    "AirDateUS": "May 11, 2019",
+    "AirDateJP": "January 20, 2019"
+  },
+  {
+    "EpisodeID": "SM106",
+    "EnglishTitle": "Evolving Research!",
+    "TranslatedTitle": "We Have a Sea and We Have a Valley! Great Intensive pokemon Evolution Training!!",
+    "AirDateUS": "June 1, 2019",
+    "AirDateJP": "January 27, 2019"
+  },
+  {
+    "EpisodeID": "SM107",
+    "EnglishTitle": "Run, Heroes, Run!",
+    "TranslatedTitle": "Kiawe}}! Surpass Yourself!!",
+    "AirDateUS": "June 8, 2019",
+    "AirDateJP": "February 3, 2019"
+  },
+  {
+    "EpisodeID": "SM108",
+    "EnglishTitle": "Memories in the Mist!",
+    "TranslatedTitle": "Tapu Fini}}'s Mist",
+    "AirDateUS": "June 15, 2019",
+    "AirDateJP": "February 10, 2019"
+  },
+  {
+    "EpisodeID": "SM109",
+    "EnglishTitle": "A Grand Debut!",
+    "TranslatedTitle": "Ash}}'s Grand Trial!!",
+    "AirDateUS": "June 22, 2019",
+    "AirDateJP": "February 17, 2019"
+  },
+  {
+    "EpisodeID": "SM110",
+    "EnglishTitle": "Keeping Your Eyes on the Ball!",
+    "TranslatedTitle": "Hole in One at PokéGolf!",
+    "AirDateUS": "June 29, 2019",
+    "AirDateJP": "February 24, 2019"
+  },
+  {
+    "EpisodeID": "SM111",
+    "EnglishTitle": "Show Me the Metal!",
+    "TranslatedTitle": "Arrival in Alola! Dripping Metal Panic!!",
+    "AirDateUS": "July 6, 2019",
+    "AirDateJP": "March 3, 2019"
+  },
+  {
+    "EpisodeID": "SM112",
+    "EnglishTitle": "Got Meltan?",
+    "TranslatedTitle": "Discovering a New Species! Catch Meltan!!",
+    "AirDateUS": "July 13, 2019",
+    "AirDateJP": "March 10, 2019"
+  },
+  {
+    "EpisodeID": "SM113",
+    "EnglishTitle": "This Magik Moment!",
+    "TranslatedTitle": "Magikarp}}",
+    "AirDateUS": "July 20, 2019",
+    "AirDateJP": "March 17, 2019"
+  },
+  {
+    "EpisodeID": "SM114",
+    "EnglishTitle": "Beauty is Only Crystal Deep!",
+    "TranslatedTitle": "Meowth}}!",
+    "AirDateUS": "July 27, 2019",
+    "AirDateJP": "March 24, 2019"
+  },
+  {
+    "EpisodeID": "SM115",
+    "EnglishTitle": "The Dealer of Destruction!",
+    "TranslatedTitle": "Emperor of Destruction Guzma!",
+    "AirDateUS": "August 3, 2019",
+    "AirDateJP": "March 31, 2019"
+  },
+  {
+    "EpisodeID": "SM116",
+    "EnglishTitle": "The Secret Princess!",
+    "TranslatedTitle": "Lillie}} and the Secret Mechanical Princess!",
+    "AirDateUS": "August 10, 2019",
+    "AirDateJP": "April 7, 2019"
+  },
+  {
+    "EpisodeID": "SM117",
+    "EnglishTitle": "Drawn with the Wind!",
+    "TranslatedTitle": "Sandy}}! The Lost Explorers!!",
+    "AirDateUS": "August 17, 2019",
+    "AirDateJP": "April 14, 2019"
+  },
+  {
+    "EpisodeID": "SM118",
+    "EnglishTitle": "Aiming for the Top Floor!",
+    "TranslatedTitle": "Aim for the Top Floor! The Explosive Dragon Gym!!",
+    "AirDateUS": "August 24, 2019",
+    "AirDateJP": "April 21, 2019"
+  },
+  {
+    "EpisodeID": "SM119",
+    "EnglishTitle": "A High-Speed Awakening!",
+    "TranslatedTitle": "Sophocles}}!!",
+    "AirDateUS": "August 31, 2019",
+    "AirDateJP": "April 28, 2019"
+  },
+  {
+    "EpisodeID": "SM120",
+    "EnglishTitle": "The One That Didn't Get Away!",
+    "TranslatedTitle": "Lana}} Fishes a Kyogre!?",
+    "AirDateUS": "September 7, 2019",
+    "AirDateJP": "May 5, 2019"
+  },
+  {
+    "EpisodeID": "SM121",
+    "EnglishTitle": "A Recipe for Success!",
+    "TranslatedTitle": "Mallow}}'s Valiant Effort! The Forest pokemon Café!!",
+    "AirDateUS": "September 14, 2019",
+    "AirDateJP": "May 12, 2019"
+  },
+  {
+    "EpisodeID": "SM122",
+    "EnglishTitle": "Spying for the Big Guy!",
+    "TranslatedTitle": "Team Rocket}}'s Alola Forms!!",
+    "AirDateUS": "September 21, 2019",
+    "AirDateJP": "May 19, 2019"
+  },
+  {
+    "EpisodeID": "SM123",
+    "EnglishTitle": "A Fiery Training Camp Trick!",
+    "TranslatedTitle": "Kiawe}}'s Fierce Boot Camp!!",
+    "AirDateUS": "September 28, 2019",
+    "AirDateJP": "May 26, 2019"
+  },
+  {
+    "EpisodeID": "SM124",
+    "EnglishTitle": "Living on the Cutting Edge!",
+    "TranslatedTitle": "Kartana}} has Arrived!!",
+    "AirDateUS": "October 5, 2019",
+    "AirDateJP": "June 2, 2019"
+  },
+  {
+    "EpisodeID": "SM125",
+    "EnglishTitle": "A Timeless Encounter!",
+    "TranslatedTitle": "Ash}}, Encounter Beyond Time!",
+    "AirDateUS": "October 12, 2019",
+    "AirDateJP": "June 9, 2019"
+  },
+  {
+    "EpisodeID": "SM126",
+    "EnglishTitle": "Pikachu's Exciting Adventure!",
+    "TranslatedTitle": "Pikachu's Exciting Expedition!",
+    "AirDateUS": "October 19, 2019",
+    "AirDateJP": "June 16, 2019"
+  },
+  {
+    "EpisodeID": "SM127",
+    "EnglishTitle": "Chasing Memories, Creating Dreams!",
+    "TranslatedTitle": "Lillie}}! Chasing a Father's Phantom!!",
+    "AirDateUS": "October 26, 2019",
+    "AirDateJP": "June 23, 2019"
+  },
+  {
+    "EpisodeID": "SM128",
+    "EnglishTitle": "League Offenders and Defenders!",
+    "TranslatedTitle": "The Curtain Rises! The Alola pokemon League!!",
+    "AirDateUS": "November 2, 2019",
+    "AirDateJP": "June 30, 2019"
+  },
+  {
+    "EpisodeID": "SM129",
+    "EnglishTitle": "Battle Royal 151!",
+    "TranslatedTitle": "The Great Fray! Battle Royal 151!!",
+    "AirDateUS": "November 9, 2019",
+    "AirDateJP": "July 7, 2019"
+  },
+  {
+    "EpisodeID": "SM130",
+    "EnglishTitle": "Battling Besties!",
+    "TranslatedTitle": "Lana}}! Super Full-Force Friendship Battle!!",
+    "AirDateUS": "November 16, 2019",
+    "AirDateJP": "July 14, 2019"
+  },
+  {
+    "EpisodeID": "SM131",
+    "EnglishTitle": "The Battlefield of Truth and Love!",
+    "TranslatedTitle": "James}}! Battlefield of Truth and Love!!",
+    "AirDateUS": "November 23, 2019",
+    "AirDateJP": "July 21, 2019"
+  },
+  {
+    "EpisodeID": "SM132",
+    "EnglishTitle": "Imitation Is the Sincerest Form of Strategy!",
+    "TranslatedTitle": "Decidueye}}!",
+    "AirDateUS": "November 30, 2019",
+    "AirDateJP": "July 28, 2019"
+  },
+  {
+    "EpisodeID": "SM133",
+    "EnglishTitle": "Battling on the Wing!",
+    "TranslatedTitle": "Sky Attack}}!!",
+    "AirDateUS": "December 7, 2019",
+    "AirDateJP": "August 4, 2019"
+  },
+  {
+    "EpisodeID": "SM134",
+    "EnglishTitle": "The Road to the Semifinals!",
+    "TranslatedTitle": "Everyone's Fully Powered! The Road to the Semifinals!!",
+    "AirDateUS": "December 14, 2019",
+    "AirDateJP": "August 11, 2019"
+  },
+  {
+    "EpisodeID": "SM135",
+    "EnglishTitle": "The Final Four!",
+    "TranslatedTitle": "Gladion}}!!",
+    "AirDateUS": "December 21, 2019",
+    "AirDateJP": "August 18, 2019"
+  },
+  {
+    "EpisodeID": "SM136",
+    "EnglishTitle": "Getting Down to The Ire!",
+    "TranslatedTitle": "Rising Fire! There's More Than One Rival!!",
+    "AirDateUS": "December 28, 2019",
+    "AirDateJP": "August 25, 2019"
+  },
+  {
+    "EpisodeID": "SM137",
+    "EnglishTitle": "The Wisdom Not to Run!‎",
+    "TranslatedTitle": "Undefeated Emperor Guzma!",
+    "AirDateUS": "January 4, 2020",
+    "AirDateJP": "September 1, 2019"
+  },
+  {
+    "EpisodeID": "SM138",
+    "EnglishTitle": "Final Rivals!",
+    "TranslatedTitle": "The Finals! The Strongest Rival Showdown!!",
+    "AirDateUS": "January 11, 2020",
+    "AirDateJP": "September 8, 2019"
+  },
+  {
+    "EpisodeID": "SM139",
+    "EnglishTitle": "Enter the Champion!",
+    "TranslatedTitle": "Birth! The Alola Champion!!",
+    "AirDateUS": "January 18, 2020",
+    "AirDateJP": "September 15, 2019"
+  },
+  {
+    "EpisodeID": "SM140",
+    "EnglishTitle": "Z-Move Showdown!",
+    "TranslatedTitle": "Guzzlord}} Invasion! The Great Z-Move Battle!!",
+    "AirDateUS": "January 25, 2020",
+    "AirDateJP": "September 22, 2019"
+  },
+  {
+    "EpisodeID": "SM141",
+    "EnglishTitle": "Exhibition Unmasked!",
+    "TranslatedTitle": "Ash}} VS Kukui!!",
+    "AirDateUS": "February 1, 2020",
+    "AirDateJP": "September 29, 2019"
+  },
+  {
+    "EpisodeID": "SM142",
+    "EnglishTitle": "A Full Battle Bounty!",
+    "TranslatedTitle": "Burn! Swell Up!! Full Battle!!!",
+    "AirDateUS": "February 8, 2020",
+    "AirDateJP": "October 6, 2019"
+  },
+  {
+    "EpisodeID": "SM143",
+    "EnglishTitle": "Fiery Surprises!",
+    "TranslatedTitle": "Torracat}}!!",
+    "AirDateUS": "February 15, 2020",
+    "AirDateJP": "October 13, 2019"
+  },
+  {
+    "EpisodeID": "SM144",
+    "EnglishTitle": "From Z to Shining Z!",
+    "TranslatedTitle": "Tapu Koko}} VS Pikachu!!",
+    "AirDateUS": "February 22, 2020",
+    "AirDateJP": "October 20, 2019"
+  },
+  {
+    "EpisodeID": "SM145",
+    "EnglishTitle": "Dreams of the Sun and Moon!",
+    "TranslatedTitle": "The Sun, the Moon, and Everyone's Dreams!",
+    "AirDateUS": "February 29, 2020",
+    "AirDateJP": "October 27, 2019"
+  },
+  {
+    "EpisodeID": "SM146",
+    "EnglishTitle": "Thank You, Alola! The Journey Continues!",
+    "TranslatedTitle": "Thank You, Alola! Respective Departures!!",
+    "AirDateUS": "March 7, 2020",
+    "AirDateJP": "November 3, 2019"
+  }
+]
