@@ -135,48 +135,47 @@
     }
   
     window.addEventListener('DOMContentLoaded', () => {
-      const currentUrl = window.location.href;
-      const idIndex = currentUrl.lastIndexOf('?');
-      const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-  
-      if (id) {
-        fetch(`https://api.anify.tv/info/${id}`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => {
-            const total = data.totalEpisodes || 0;
-  
-            const artwork = data.artwork.find(item => item.type === 'poster' && item.providerId === 'anilist');
-            const englishName = data.english || '';
-            const description = data.description || '';
-            const englishTitle = data.title.english || 'Not available';
-            const romajiTitle = data.title.romaji || 'Not available';
-            const nativeTitle = data.title.native || 'Not available';
-  
-            const artworkImg = document.querySelector('.artwork');
-            artworkImg.src = artwork ? artwork.img : '';
-  
-            const descriptionElement = document.querySelector('.description');
-            descriptionElement.textContent = description;
-  
-            const titleElement = document.querySelector('.title-info');
-            titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}\nNative: ${nativeTitle}`;
-  
-            totalEpisodes = total;
-  
-            document.getElementById('sub-dub-buttons').style.display = 'block';
-          })
-          .catch(error => {
-            console.error('Error fetching data:', error);
-          });
-      } else {
-        console.error('No ID found in the URL');
-      }
-    });
+  const currentUrl = window.location.href;
+  const idIndex = currentUrl.lastIndexOf('?');
+  const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
+
+  if (id) {
+    fetch(`https://consumet-nine-mu.vercel.app/meta/mal/info/${id}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const total = data.totalEpisodes || 0;
+
+        const artwork = data.image || ''; // Accessing the image URL directly
+        const englishName = data.english || '';
+        const description = data.description || '';
+        const englishTitle = data.title.english || 'Not available';
+        const romajiTitle = data.title.romaji || 'Not available';
+
+        const artworkImg = document.querySelector('.artwork');
+        artworkImg.src = artwork; // Assign the artwork URL directly to the src attribute
+
+        const descriptionElement = document.querySelector('.description');
+        descriptionElement.textContent = description;
+
+        const titleElement = document.querySelector('.title-info');
+        titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}`;
+
+        totalEpisodes = total;
+
+        document.getElementById('sub-dub-buttons').style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  } else {
+    console.error('No ID found in the URL');
+  }
+});
   </script>
   
 </body>
