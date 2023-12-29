@@ -62,7 +62,7 @@
             const links = episodeLinksContainer.querySelectorAll('.link');
             links.forEach((link, index) => {
               const episode = index + 1;
-              const playUrl = `play.html?anilistid=${id}&episode=${episode}&source=${source}&subtype=${subtype}`;
+              const playUrl = `play.?anilistid=${id}&episode=${episode}&source=${source}&subtype=${subtype}`;
               link.href = playUrl;
             });
           } else {
@@ -118,7 +118,7 @@
         let link = document.createElement('a');
         link.className = 'link';
   
-        const playUrl = `play.html?anilistid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
+        const playUrl = `play?anilistid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
   
         link.href = playUrl;
         link.target = '_self';
