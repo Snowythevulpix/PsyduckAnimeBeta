@@ -62,7 +62,7 @@
             const links = episodeLinksContainer.querySelectorAll('.link');
             links.forEach((link, index) => {
               const episode = index + 1;
-              const playUrl = `play.?anilistid=${id}&episode=${episode}&source=${source}&subtype=${subtype}`;
+              const playUrl = `play?anilistid=${id}&episode=${episode}&source=${source}&subtype=${subtype}`;
               link.href = playUrl;
             });
           } else {
