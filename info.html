@@ -140,7 +140,7 @@
   const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
 
   if (id) {
-    fetch(`https://psyduckanime.xyz/meta/mal/info/${id}`)
+    fetch(`https://consumet-nine-mu.vercel.app/meta/mal/info/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
