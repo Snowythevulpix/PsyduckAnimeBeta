@@ -169,62 +169,6 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", async function () {
-      try {
-        const ids = [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291,31592,34034,40351,53874];
-  
-        const showGrid = document.getElementById('showGrid');
-        const loadingOverlay = document.getElementById('loadingOverlay');
-        let loadedImages = 0; // Counter to track loaded images
-  
-        async function fetchAndDisplayData(id) {
-          try {
-            const response = await fetch(`https://consumet-nine-mu.vercel.app/meta/mal/info/${id}`);
-            const data = await response.json();
-            const image = data.image;
-  
-            if (image && image.length > 0) {
-              const imgURL = image;
-              const title = data.title;
-  
-              const showElement = document.createElement('div');
-              showElement.classList.add('show');
-              const anchorElement = document.createElement('a');
-              anchorElement.href = `/info?${id}`;
-              const imgElement = document.createElement('img');
-              imgElement.src = imgURL;
-              imgElement.alt = `Show ${id}`;
-              const titleElement = document.createElement('div');
-              titleElement.classList.add('show-title');
-              titleElement.innerText = `${title.english}`;
-  
-              anchorElement.appendChild(imgElement);
-              showElement.appendChild(anchorElement);
-              showElement.appendChild(titleElement);
-  
-              showGrid.appendChild(showElement);
-              imgElement.onload = () => {
-                loadedImages++;
-                if (loadedImages === ids.length) {
-                  loadingOverlay.style.display = 'none'; // Hide loading overlay when all images are loaded
-                }
-              };
-            }
-          } catch (error) {
-            console.error(`Error fetching data for ID ${id}:`, error);
-          }
-        }
-  
-        for (const id of ids) {
-          await fetchAndDisplayData(id);
-        }
-      } catch (error) {
-        console.error('Error fetching or parsing data:', error);
-      }
-    });
-  </script>
-  <!-- Second series section -->
   <div class="container2">
     <h2>Liko's Series</h2>
     <div class="show-grid2" id="showGrid2">
@@ -235,59 +179,63 @@
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
       try {
-        const ids2 = [158871];
+        const ids = [
+          [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291, 31592, 34034, 40351, 53874], // Ash's series
+          [53876] // Liko's Series
+        ];
   
-        const showGrid2 = document.getElementById('showGrid2');
-        const loadingOverlay2 = document.getElementById('loadingOverlay2'); // Add this line if needed
-        let loadedImages2 = 0; // Add this line if needed
+        const showGrids = [document.getElementById('showGrid'), document.getElementById('showGrid2')];
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        let loadedImages = 0; // Counter to track loaded images
   
-        async function fetchAndDisplayData2(id) {
-          try {
-            const response = await fetch(`https://api.anify.tv/info/${id}`);
-            const data = await response.json();
-            const artwork = data.artwork;
+        async function fetchAndDisplayData(showGrid, idList) {
+          for (let i = 0; i < idList.length; i++) {
+            const id = idList[i];
+            try {
+              const response = await fetch(`https://consumet-nine-mu.vercel.app/meta/mal/info/${id}`);
+              const data = await response.json();
+              const image = data.image;
   
-            if (artwork && artwork.length > 0) {
-              const imgURL = artwork[0].img;
-              const title = data.title;
+              if (image && image.length > 0) {
+                const imgURL = image;
+                const title = data.title;
   
-              const showElement = document.createElement('div');
-              showElement.classList.add('show');
-              const anchorElement = document.createElement('a');
-              anchorElement.href = `/info?${id}`;
-              const imgElement = document.createElement('img');
-              imgElement.src = imgURL;
-              imgElement.alt = `Show ${id}`;
-              const titleElement = document.createElement('div');
-              titleElement.classList.add('show-title');
-              titleElement.innerText = `${title.english}`;
+                const showElement = document.createElement('div');
+                showElement.classList.add('show');
+                const anchorElement = document.createElement('a');
+                anchorElement.href = `/info?${id}`;
+                const imgElement = document.createElement('img');
+                imgElement.src = imgURL;
+                imgElement.alt = `Show ${id}`;
+                const titleElement = document.createElement('div');
+                titleElement.classList.add('show-title');
+                titleElement.innerText = `${title.english}`;
   
-              anchorElement.appendChild(imgElement);
-              showElement.appendChild(anchorElement);
-              showElement.appendChild(titleElement);
+                anchorElement.appendChild(imgElement);
+                showElement.appendChild(anchorElement);
+                showElement.appendChild(titleElement);
   
-              showGrid2.appendChild(showElement);
-              imgElement.onload = () => {
-                loadedImages2++;
-                if (loadedImages2 === ids2.length) {
-                  loadingOverlay2.style.display = 'none'; // Hide loading overlay when all images are loaded
-                }
-              };
+                showGrid.appendChild(showElement);
+                imgElement.onload = () => {
+                  loadedImages++;
+                  if (loadedImages === ids.flat().length) {
+                    loadingOverlay.style.display = 'none'; // Hide loading overlay when all images are loaded
+                  }
+                };
+              }
+            } catch (error) {
+              console.error(`Error fetching data for ID ${id}:`, error);
             }
-          } catch (error) {
-            console.error(`Error fetching data for ID ${id}:`, error);
           }
         }
   
-        for (const id of ids2) {
-          await fetchAndDisplayData2(id);
+        for (let i = 0; i < showGrids.length; i++) {
+          await fetchAndDisplayData(showGrids[i], ids[i]);
         }
       } catch (error) {
         console.error('Error fetching or parsing data:', error);
       }
     });
-  </script>
-  
-
+  </script>  
 </body>
 </html>
