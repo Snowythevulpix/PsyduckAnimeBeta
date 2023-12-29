@@ -70,3 +70,63 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+  color: #fff;
+  position: relative;
+}
+.container {
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.artwork {
+  max-width: 300px;
+  height: auto;
+}
+.title {
+  margin-bottom: 10px;
+}
+.title-info {
+  white-space: pre-line;
+}
+.watch-now {
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 50px; /* Adjusted margin to move it further to the right */
+}
+/* Mobile Optimizations */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+  .artwork {
+    max-width: 90%; /* Adjusted max-width for better mobile view */
+    height: auto;
+  }
+  .info {
+    margin-left: 0; /* Reset margin for better centering */
+    margin-top: 20px; /* Added margin for spacing */
+  }
+  .watch-now {
+    margin-left: 0; /* Reset margin */
+    margin-top: 20px; /* Added margin for spacing */
+  }
+}
+/* Rest of your existing CSS styles */
+/* ... */
