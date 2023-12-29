@@ -21,6 +21,9 @@
   <!-- Clappr player container -->
   <div id="player-container"></div>
 
+  <!-- Next Episode button -->
+  <button onclick="nextEpisode()">Next Episode</button>
+
   <script>
     document.addEventListener('DOMContentLoaded', async function () {
       try {
@@ -59,7 +62,7 @@
                     parentId: '#player-container',
                   });
 
-                  // Modified script begins here
+                  // Function to make API requests
                   async function makeRequest(url) {
                     const response = await fetch(url);
                     return await response.json();
@@ -101,7 +104,6 @@
                   } else {
                     console.log("Subtype is not 'dub'.");
                   }
-                  // Modified script ends here
 
                 } else {
                   console.log('Video URL not found.');
@@ -122,6 +124,26 @@
         console.error('Error fetching provider data:', error);
       }
     });
+
+    // Function to handle going to the next episode
+    async function nextEpisode() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const anilistid = urlParams.get('anilistid');
+        let episode = urlParams.get('episode');
+        const source = urlParams.get('source');
+        const subtype = urlParams.get('subtype');
+
+        // Increment the episode number
+        episode = parseInt(episode) + 1;
+
+        // Redirect to the next episode's URL
+        const nextEpisodeURL = `/play?anilistid=${anilistid}&episode=${episode}&source=${source}&subtype=${subtype}`;
+        window.location.href = nextEpisodeURL;
+      } catch (error) {
+        console.error('Error navigating to next episode:', error);
+      }
+    }
   </script>
 </body>
 </html>
