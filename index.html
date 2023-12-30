@@ -121,6 +121,47 @@
       text-align: center;
       width: 100%;
     }
+ /* Additional styles for a new series */
+ .container3 {
+      /* Add specific styling for the second series container */
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .show-grid3 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+    .show3 {
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      width: 120px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .show3 img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .show-title3 {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px;
+      border-radius: 0 0 5px 5px;
+      font-size: 12px;
+      text-align: center;
+      width: 100%;
+    }
 
   </style>
 </head>
@@ -149,15 +190,27 @@
     </div>
   </div>
 
+  <div class="container2">
+    <h2>Ash's movies</h2>
+    <div class="show-grid3" id="showGrid3">
+      <!-- To be populated via JavaScript -->
+    </div>
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
       try {
         const ids = [
           [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291, 31592, 34034, 40351, 53874], // Ash's series
-          [53876] // Liko's Series
+          [53876], // Liko's Series
+          [528, 1117, 1118,1119,1120,1121,1122,1526,2201,2847] // Ash's movies
         ];
   
-        const showGrids = [document.getElementById('showGrid'), document.getElementById('showGrid2')];
+        const showGrids = [
+          document.getElementById('showGrid'),
+          document.getElementById('showGrid2'),
+          document.getElementById('showGrid3')
+        ];
         const loadingOverlay = document.getElementById('loadingOverlay');
         let loadedImages = 0; // Counter to track loaded images
   
@@ -174,14 +227,14 @@
                 const title = data.title;
   
                 const showElement = document.createElement('div');
-                showElement.classList.add('show');
+                showElement.classList.add('show3'); // Updated class name for "Ash's movies"
                 const anchorElement = document.createElement('a');
                 anchorElement.href = `/info?${id}`;
                 const imgElement = document.createElement('img');
                 imgElement.src = imgURL;
                 imgElement.alt = `Show ${id}`;
                 const titleElement = document.createElement('div');
-                titleElement.classList.add('show-title');
+                titleElement.classList.add('show-title3'); // Updated title class for "Ash's movies"
                 titleElement.innerText = `${title.english}`;
   
                 anchorElement.appendChild(imgElement);
@@ -209,6 +262,6 @@
         console.error('Error fetching or parsing data:', error);
       }
     });
-  </script>  
+  </script>
 </body>
 </html>
