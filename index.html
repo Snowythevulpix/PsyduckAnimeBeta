@@ -80,21 +80,6 @@
       width: 150px; /* Increased size of the loading spinner for mobile */
       height: 150px;
     }
-
-    /* Mobile Optimization */
-    @media screen and (max-width: 600px) {
-      .show-grid {
-        grid-template-columns: repeat(2, 1fr); /* Display 2 items per row */
-        grid-auto-rows: 200px; /* Adjust the row height */
-        gap: 20px; /* Increase the gap between items */
-        overflow-y: auto; /* Enable vertical scrolling */
-        overflow-x: hidden; /* Hide horizontal overflow */
-      }
-
-      .show {
-        width: calc(50% - 10px); /* Adjust width to fit 2 items with gap */
-      }
-    }
  /* Additional styles for a new series */
  .container2 {
       /* Add specific styling for the second series container */
@@ -135,18 +120,6 @@
       font-size: 12px;
       text-align: center;
       width: 100%;
-    }
-    /* Media query for the second series on mobile */
-    @media screen and (max-width: 600px) {
-      .show-grid2 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        overflow-y: auto;
-        overflow-x: hidden;
-      }
-      .show2 {
-        width: calc(50% - 10px);
-      }
     }
 
   </style>
