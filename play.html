@@ -32,6 +32,7 @@
         const episode = urlParams.get('episode');
         const source = urlParams.get('source');
         const subtype = urlParams.get('subtype');
+        const malId = urlParams.get('malid'); // Using 'malid' from the URL
 
         const response = await fetch(`https://api.anify.tv/episodes/${anilistid}`);
         if (response.ok) {
@@ -69,37 +70,21 @@
                   }
 
                   if (subtype === "dub") {
-                    const anifyResponse = await makeRequest(`https://api.anify.tv/info/${anilistid}`);
-                    
-                    const mappings = anifyResponse.mappings;
-                    let malId = null;
-                    
-                    for (const mapping of mappings) {
-                      if (mapping.providerId === "mal") {
-                        malId = mapping.id;
-                        break;
-                      }
-                    }
-
-                    if (malId) {
-                      const jikanResponse = await makeRequest(`https://api.jikan.moe/v4/anime/${malId}/episodes`);
+                    const jikanResponse = await makeRequest(`https://api.jikan.moe/v4/anime/${malId}/episodes`);
                       
-                      const episodeData = jikanResponse.data.find(episodeInfo => episodeInfo.mal_id === parseInt(episode));
+                    const episodeData = jikanResponse.data.find(episodeInfo => episodeInfo.mal_id === parseInt(episode));
                       
-                      if (episodeData) {
-                        const title = episodeData.title;
-                        console.log(`You're watching episode ${episode} - ${title}`);
+                    if (episodeData) {
+                      const title = episodeData.title;
+                      console.log(`You're watching episode ${episode} - ${title}`);
                         
-                        const playerElement = document.getElementById('player-container'); 
-                        const titleElement = document.createElement('div');
-                        titleElement.innerText = `You're watching episode ${episode} - ${title}`;
-                        titleElement.style.fontSize = '24px'; // Increase text size
-                        playerElement.insertBefore(titleElement, playerElement.firstChild);
-                      } else {
-                        console.log(`Episode ${episode} not found.`);
-                      }
+                      const playerElement = document.getElementById('player-container'); 
+                      const titleElement = document.createElement('div');
+                      titleElement.innerText = `You're watching episode ${episode} - ${title}`;
+                      titleElement.style.fontSize = '24px'; // Increase text size
+                      playerElement.insertBefore(titleElement, playerElement.firstChild);
                     } else {
-                      console.log("MAL ID not found in mappings.");
+                      console.log(`Episode ${episode} not found.`);
                     }
                   } else {
                     console.log("Subtype is not 'dub'.");
@@ -133,12 +118,13 @@
         let episode = urlParams.get('episode');
         const source = urlParams.get('source');
         const subtype = urlParams.get('subtype');
+        const malId = urlParams.get('malid'); // Using 'malid' from the URL
 
         // Increment the episode number
         episode = parseInt(episode) + 1;
 
         // Redirect to the next episode's URL
-        const nextEpisodeURL = `/play?anilistid=${anilistid}&episode=${episode}&source=${source}&subtype=${subtype}`;
+        const nextEpisodeURL = `/play?anilistid=${anilistid}&episode=${episode}&source=${source}&subtype=${subtype}&malid=${malId}`;
         window.location.href = nextEpisodeURL;
       } catch (error) {
         console.error('Error navigating to next episode:', error);
