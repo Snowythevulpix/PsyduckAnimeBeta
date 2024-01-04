@@ -63,44 +63,72 @@
     }
     
     function selectSub() {
-      subtype = 'sub';
-      const currentUrl = window.location.href;
-      const idIndex = currentUrl.lastIndexOf('?');
-      const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-      if (id) {
-        mal2anilist(id)
-          .then(anilistId => {
-            if (anilistId !== null) {
-              updateSource(anilistId, subtype);
-              showEpisodeButtons();
-            } else {
-              console.log("Anilist ID retrieval failed.");
+  const subtype = 'sub'; // Declared subtype variable
+  const currentUrl = window.location.href;
+  const idIndex = currentUrl.lastIndexOf('?');
+  const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
+  
+  if (id) {
+    mal2anilist(id)
+      .then(async (anilistId) => { // Using async function for promise handling
+        if (anilistId !== null) {
+          updateSource(anilistId, subtype);
+          showEpisodeButtons();
+
+          // Fetching data after updateSource and showEpisodeButtons
+          const response = await fetch(`https://api.anify.tv/episodes/${anilistId}`);
+          if (response.ok) {
+            const data = await response.json();
+           {
+              console.log('Available Provider IDs:', data.map((provider) => provider.providerId));
             }
-          });
-      } else {
-        console.error('No ID found in the URL');
-      }
-    }
+          }
+        } else {
+          console.log("Anilist ID retrieval failed.");
+        }
+      })
+      .catch((error) => {
+        console.error('Error occurred:', error);
+      });
+  } else {
+    console.error('No ID found in the URL');
+  }
+}
+
       
-    function selectDub() {
-      subtype = 'dub';
-      const currentUrl = window.location.href;
-      const idIndex = currentUrl.lastIndexOf('?');
-      const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-      if (id) {
-        mal2anilist(id)
-          .then(anilistId => {
-            if (anilistId !== null) {
-              updateSource(anilistId, subtype);
-              showEpisodeButtons();
-            } else {
-              console.log("Anilist ID retrieval failed.");
-            }
-          });
+async function selectDub() {
+  const subtype = 'dub'; // Declared subtype variable
+  const currentUrl = window.location.href;
+  const idIndex = currentUrl.lastIndexOf('?');
+  const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
+  
+  if (id) {
+    try {
+      const anilistId = await mal2anilist(id);
+      
+      if (anilistId !== null) {
+        updateSource(anilistId, subtype);
+        showEpisodeButtons();
+
+        // Fetching data after updateSource and showEpisodeButtons
+        const response = await fetch(`https://api.anify.tv/episodes/${anilistId}`);
+        if (response.ok) {
+          const data = await response.json();
+          {
+            console.log('Available Provider IDs:', data.map((provider) => provider.providerId));
+          }
+        }
       } else {
-        console.error('No ID found in the URL');
+        console.log("Anilist ID retrieval failed.");
       }
+    } catch (error) {
+      console.error('Error occurred:', error);
     }
+  } else {
+    console.error('No ID found in the URL');
+  }
+}
+
     
     function showEpisodeButtons() {
       document.getElementById('sub-dub-buttons').style.display = 'none';
