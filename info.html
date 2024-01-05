@@ -38,15 +38,15 @@
     let scrolled = false;
     let totalEpisodes = 0;
     let subtype = null;
-    let anilistId = null; // Declaring anilistId in the broader scope
-    
+    let anilistId = null;
+  
     async function mal2anilist(id) {
       const url = `https://anilist2mal.vercel.app/api/ids?service=mal&id=${id}`;
       try {
         const response = await fetch(url);
         if (response.ok) {
           const data = await response.json();
-          anilistId = data.anilist_id; // Assigning value to the broader scoped variable
+          anilistId = data.anilist_id;
           return anilistId;
         } else {
           console.error(`Request failed with status code ${response.status}`);
@@ -57,12 +57,35 @@
         return null;
       }
     }
-    
-    function updateSource(id, subtype) {
-      // Rest of your code remains the same
+  
+    async function updateSourceWithProvider(anilistId, id, episode, subtype) {
+  try {
+    const apiUrl = `https://api.anify.tv/episodes/${anilistId}`;
+    const response = await fetch(apiUrl);
+
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data) && data.length > 0) {
+        // Assuming data is an array of objects containing provider information
+        const firstProvider = data[0].providerId; // Accessing the providerId of the first item
+        const playUrl = `play?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=${firstProvider}&subtype=${subtype}`;
+        return playUrl;
+      } else {
+        console.error('No providers found for this episode.');
+        return null;
+      }
+    } else {
+      console.error(`Failed to fetch episode data. Status: ${response.status}`);
+      return null;
     }
-    
-    function selectSub() {
+  } catch (error) {
+    console.error('Error fetching episode data:', error);
+    return null;
+  }
+}
+
+  
+    async function selectSub() {
       subtype = 'sub';
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
@@ -71,7 +94,14 @@
         mal2anilist(id)
           .then(anilistId => {
             if (anilistId !== null) {
-              updateSource(anilistId, subtype);
+              updateSourceWithProvider(anilistId, id, 1, subtype)
+                .then(updatedPlayUrl => {
+                  if (updatedPlayUrl !== null) {
+                    console.log("Updated playUrl with the first provider:", updatedPlayUrl);
+                  } else {
+                    console.log("Failed to update playUrl.");
+                  }
+                });
               showEpisodeButtons();
             } else {
               console.log("Anilist ID retrieval failed.");
@@ -81,8 +111,8 @@
         console.error('No ID found in the URL');
       }
     }
-      
-    function selectDub() {
+  
+    async function selectDub() {
       subtype = 'dub';
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
@@ -91,7 +121,14 @@
         mal2anilist(id)
           .then(anilistId => {
             if (anilistId !== null) {
-              updateSource(anilistId, subtype);
+              updateSourceWithProvider(anilistId, id, 1, subtype)
+                .then(updatedPlayUrl => {
+                  if (updatedPlayUrl !== null) {
+                    console.log("Updated playUrl with the first provider:", updatedPlayUrl);
+                  } else {
+                    console.log("Failed to update playUrl.");
+                  }
+                });
               showEpisodeButtons();
             } else {
               console.log("Anilist ID retrieval failed.");
@@ -101,46 +138,46 @@
         console.error('No ID found in the URL');
       }
     }
-    
+  
     function showEpisodeButtons() {
       document.getElementById('sub-dub-buttons').style.display = 'none';
       document.getElementById('episode-links').style.display = 'block';
       createEpisodeButtons(totalEpisodes, subtype);
     }
-    
+  
     function createEpisodeButtons(totalEpisodes, subtype) {
       const episodeLinksContainer = document.getElementById('episode-links');
-      episodeLinksContainer.innerHTML = ''; // Clear the container
-    
+      episodeLinksContainer.innerHTML = '';
+  
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
       const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-    
+  
       for (let episode = 1; episode <= totalEpisodes; episode++) {
         let link = document.createElement('a');
         link.className = 'link';
-    
+  
         const playUrl = `play?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
-    
+  
         link.href = playUrl;
         link.target = '_self';
         link.textContent = episode.toString();
-    
+  
         episodeLinksContainer.appendChild(link);
-    
+  
         if (episode % 5 === 0) {
           episodeLinksContainer.appendChild(document.createElement('br'));
         }
       }
-    
+  
       episodeLinksContainer.style.display = 'block';
     }
-    
+  
     window.addEventListener('DOMContentLoaded', () => {
       const currentUrl = window.location.href;
       const idIndex = currentUrl.lastIndexOf('?');
       const id = idIndex !== -1 ? currentUrl.slice(idIndex + 1) : null;
-    
+  
       if (id) {
         fetch(`https://consumet-nine-mu.vercel.app/meta/mal/info/${id}`)
           .then(response => {
@@ -151,24 +188,23 @@
           })
           .then(data => {
             const total = data.totalEpisodes || 0;
-    
-            const artwork = data.image || ''; // Accessing the image URL directly
+            const artwork = data.image || '';
             const englishName = data.english || '';
             const description = data.description || '';
             const englishTitle = data.title.english || 'Not available';
             const romajiTitle = data.title.romaji || 'Not available';
-    
+  
             const artworkImg = document.querySelector('.artwork');
-            artworkImg.src = artwork; // Assign the artwork URL directly to the src attribute
-    
+            artworkImg.src = artwork;
+  
             const descriptionElement = document.querySelector('.description');
             descriptionElement.textContent = description;
-    
+  
             const titleElement = document.querySelector('.title-info');
             titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}`;
-    
+  
             totalEpisodes = total;
-    
+  
             document.getElementById('sub-dub-buttons').style.display = 'block';
           })
           .catch(error => {
@@ -178,6 +214,6 @@
         console.error('No ID found in the URL');
       }
     });
-    </script>    
+  </script>     
 </body>
 </html>
