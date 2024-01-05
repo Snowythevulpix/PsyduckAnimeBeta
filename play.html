@@ -124,7 +124,7 @@
         episode = parseInt(episode) + 1;
 
         // Redirect to the next episode's URL
-        const nextEpisodeURL = `/play?anilistid=${anilistid}&malid=${malId}&episode=${episode}&source=${source}&subtype=${subtype}`;
+        const nextEpisodeURL = `/play.html?anilistid=${anilistid}&malid=${malId}&episode=${episode}&source=${source}&subtype=${subtype}`;
         window.location.href = nextEpisodeURL;
       } catch (error) {
         console.error('Error navigating to next episode:', error);

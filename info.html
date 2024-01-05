@@ -68,7 +68,7 @@
       if (Array.isArray(data) && data.length > 0) {
         // Assuming data is an array of objects containing provider information
         const firstProvider = data[0].providerId; // Accessing the providerId of the first item
-        const playUrl = `play?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=${firstProvider}&subtype=${subtype}`;
+        const playUrl = `play.html?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=${firstProvider}&subtype=${subtype}`;
         return playUrl;
       } else {
         console.error('No providers found for this episode.');
@@ -157,7 +157,7 @@
         let link = document.createElement('a');
         link.className = 'link';
   
-        const playUrl = `play?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
+        const playUrl = `play.html?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=gogoanime&subtype=${subtype}`;
   
         link.href = playUrl;
         link.target = '_self';
