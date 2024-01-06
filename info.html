@@ -19,8 +19,10 @@
   <div class="container">
     <img class="artwork" src="" alt="Artwork">
     <div class="info">
-      <h2 class="title">Title</h2>
+      <h2 class="title">Information</h2>
       <p class="title-info"></p>
+      <p class="data-romanji"></p>
+      <p class="data-genre"></p>
       <h2 class="description-title">Description</h2>
       <p class="description"></p>
     </div>
@@ -59,31 +61,30 @@
     }
   
     async function updateSourceWithProvider(anilistId, id, episode, subtype) {
-  try {
-    const apiUrl = `https://api.anify.tv/episodes/${anilistId}`;
-    const response = await fetch(apiUrl);
+      try {
+        const apiUrl = `https://api.anify.tv/episodes/${anilistId}`;
+        const response = await fetch(apiUrl);
 
-    if (response.ok) {
-      const data = await response.json();
-      if (Array.isArray(data) && data.length > 0) {
-        // Assuming data is an array of objects containing provider information
-        const firstProvider = data[0].providerId; // Accessing the providerId of the first item
-        const playUrl = `play.html?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=${firstProvider}&subtype=${subtype}`;
-        return playUrl;
-      } else {
-        console.error('No providers found for this episode.');
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data) && data.length > 0) {
+            // Assuming data is an array of objects containing provider information
+            const firstProvider = data[0].providerId; // Accessing the providerId of the first item
+            const playUrl = `play.html?anilistid=${anilistId}&malid=${id}&episode=${episode}&source=${firstProvider}&subtype=${subtype}`;
+            return playUrl;
+          } else {
+            console.error('No providers found for this episode.');
+            return null;
+          }
+        } else {
+          console.error(`Failed to fetch episode data. Status: ${response.status}`);
+          return null;
+        }
+      } catch (error) {
+        console.error('Error fetching episode data:', error);
         return null;
       }
-    } else {
-      console.error(`Failed to fetch episode data. Status: ${response.status}`);
-      return null;
     }
-  } catch (error) {
-    console.error('Error fetching episode data:', error);
-    return null;
-  }
-}
-
   
     async function selectSub() {
       subtype = 'sub';
@@ -193,6 +194,7 @@
             const description = data.description || '';
             const englishTitle = data.title.english || 'Not available';
             const romajiTitle = data.title.romaji || 'Not available';
+            const genre = data.genres || 'Genre not available';
   
             const artworkImg = document.querySelector('.artwork');
             artworkImg.src = artwork;
@@ -201,7 +203,13 @@
             descriptionElement.textContent = description;
   
             const titleElement = document.querySelector('.title-info');
-            titleElement.textContent = `English: ${englishTitle}\nRomaji: ${romajiTitle}`;
+            titleElement.textContent = `English: ${englishTitle}`;
+  
+            const romajiElement = document.querySelector('.data-romanji');
+            romajiElement.textContent = `Romaji: ${romajiTitle}`;
+  
+            const genreElement = document.querySelector('.data-genre');
+            genreElement.textContent = `Genres: ${genre}`;
   
             totalEpisodes = total;
   
@@ -214,7 +222,6 @@
         console.error('No ID found in the URL');
       }
     });
-    // this is the wanted version
   </script>     
 </body>
 </html>
