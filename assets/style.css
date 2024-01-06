@@ -90,19 +90,4 @@ body {
   
   /* Additional mobile styles if needed */
 }
-.top-right-title {
-  position: fixed;
-  top: 20px;
-  right: 500px;
-  z-index: 9999;
-  color: white; /* Choose your desired text color */
-  }
-  .bottom-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-  }
-  
-  
+
