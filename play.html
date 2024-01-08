@@ -28,7 +28,7 @@
     document.addEventListener('DOMContentLoaded', async function () {
       try {
         const urlParams = new URLSearchParams(window.location.search);
-        const anilistid = urlParams.get('anilistid');
+        const anilistid = urlParams.get('id');
         const episode = urlParams.get('episode');
         const source = urlParams.get('source');
         const subtype = urlParams.get('subtype');
@@ -118,7 +118,6 @@
         let episode = urlParams.get('episode');
         const source = urlParams.get('source');
         const subtype = urlParams.get('subtype');
-        const malId = urlParams.get('malid'); // Using 'malid' from the URL
 
         // Increment the episode number
         episode = parseInt(episode) + 1;
