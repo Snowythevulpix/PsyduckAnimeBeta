@@ -245,88 +245,91 @@
   </div>
 
   <script>
-    async function fetchData(id) {
-      try {
-        const response = await fetch(`https://api.anify.tv/info/${id}`);
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error(`Error fetching data for ID ${id}:`, error);
-        throw error;
+async function fetchData(id) {
+  try {
+    const response = await fetch(`https://api.anify.tv/info/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching data for ID ${id}:`, error);
+    throw error;
+  }
+}
+
+function displayMALPosters(showGrid, dataList) {
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  let loadedImages = 0;
+
+  dataList.forEach(async (data) => {
+    try {
+      const malPoster = data.artwork.find(item => item.type === 'poster' && item.providerId === 'anilist');
+      if (malPoster) {
+        const imgURL = malPoster.img;
+        const title = data.title;
+
+        const showElement = document.createElement('div');
+        showElement.classList.add('show3'); // Updated class name for "Ash's movies"
+        const anchorElement = document.createElement('a');
+        anchorElement.href = `/info.html?${data.id}`;
+        const imgElement = document.createElement('img');
+        imgElement.src = imgURL;
+        imgElement.alt = `Show ${data.id}`;
+        const titleElement = document.createElement('div');
+        titleElement.classList.add('show-title3'); // Updated title class for "Ash's movies"
+        titleElement.innerText = `${title.english}`;
+
+        anchorElement.appendChild(imgElement);
+        showElement.appendChild(anchorElement);
+        showElement.appendChild(titleElement);
+
+        showGrid.appendChild(showElement);
+
+        imgElement.onload = () => {
+          loadedImages++;
+          if (loadedImages === dataList.length) {
+            loadingOverlay.style.display = 'none'; // Hide loading overlay when all images are loaded
+          }
+        };
       }
+    } catch (error) {
+      console.error(`Error processing data:`, error);
     }
-  
-    function displayData(showGrid, dataList) {
-      const loadingOverlay = document.getElementById('loadingOverlay');
-      let loadedImages = 0;
-  
-      dataList.forEach(data => {
-        const image = data.coverImage;
-  
-        if (image && image.length > 0) {
-          const imgURL = image;
-          const title = data.title;
-  
-          const showElement = document.createElement('div');
-          showElement.classList.add('show3'); // Updated class name for "Ash's movies"
-          const anchorElement = document.createElement('a');
-          anchorElement.href = `/info.html?${data.id}`;
-          const imgElement = document.createElement('img');
-          imgElement.src = imgURL;
-          imgElement.alt = `Show ${data.id}`;
-          const titleElement = document.createElement('div');
-          titleElement.classList.add('show-title3'); // Updated title class for "Ash's movies"
-          titleElement.innerText = `${title.english}`;
-  
-          anchorElement.appendChild(imgElement);
-          showElement.appendChild(anchorElement);
-          showElement.appendChild(titleElement);
-  
-          showGrid.appendChild(showElement);
-  
-          imgElement.onload = () => {
-            loadedImages++;
-            if (loadedImages === dataList.length) {
-              loadingOverlay.style.display = 'none'; // Hide loading overlay when all images are loaded
-            }
-          };
-        }
-      });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const ids = [
+    [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291, 21356, 97634, 112153, 158870], // Ash's series
+    [158871], // Liko's Series
+    [528, 1117, 1118, 1119, 1120, 1121, 1122, 1526, 2201, 2847], // Ash's movies
+    [20159] // mini series
+  ];
+
+  const showGrids = [
+    document.getElementById('showGrid'),
+    document.getElementById('showGrid2'),
+    document.getElementById('showGrid3'),
+    document.getElementById('showGrid4')
+  ];
+
+  try {
+    const promisesList = [];
+    for (let i = 0; i < ids.length; i++) {
+      const promises = ids[i].map(id => fetchData(id)); // Making fetch return a promise for each ID
+      promisesList.push(Promise.all(promises)); // Adding promises to the list
     }
-  
-    document.addEventListener("DOMContentLoaded", async function () {
-      const ids = [
-        [527, 1564, 1565, 9107, 14093, 17115, 17873, 19291, 21356,97634,112153,158870], // Ash's series
-        [158871], // Liko's Series
-        [528, 1117, 1118, 1119, 1120, 1121, 1122, 1526, 2201, 2847], // Ash's movies
-        [20159] //mini series
-      ];
-  
-      const showGrids = [
-        document.getElementById('showGrid'),
-        document.getElementById('showGrid2'),
-        document.getElementById('showGrid3'),
-        document.getElementById('showGrid4')
-      ];
-  
-      try {
-        const promisesList = [];
-        for (let i = 0; i < ids.length; i++) {
-          const promises = ids[i].map(id => fetchData(id)); // Making fetch return a promise for each ID
-          promisesList.push(Promise.all(promises)); // Adding promises to the list
-        }
-  
-        // Waiting for all promises in the list to resolve
-        const allData = await Promise.all(promisesList.flat());
-  
-        // Once all promises have resolved, call displayData function
-        for (let i = 0; i < showGrids.length; i++) {
-          displayData(showGrids[i], allData[i]);
-        }
-      } catch (error) {
-        console.error('Error fetching or displaying data:', error);
-      }
-    });
+
+    // Waiting for all promises in the list to resolve
+    const allData = await Promise.all(promisesList.flat());
+
+    // Once all promises have resolved, call displayMALPosters function
+    for (let i = 0; i < showGrids.length; i++) {
+      displayMALPosters(showGrids[i], allData[i]);
+    }
+  } catch (error) {
+    console.error('Error fetching or displaying data:', error);
+  }
+});
   </script>
   
 </body>
