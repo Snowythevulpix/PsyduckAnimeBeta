@@ -69,27 +69,6 @@
                     return await response.json();
                   }
 
-                  if (subtype === "dub") {
-                    const jikanResponse = await makeRequest(`https://api.jikan.moe/v4/anime/${malId}/episodes`);
-                      
-                    const episodeData = jikanResponse.data.find(episodeInfo => episodeInfo.mal_id === parseInt(episode));
-                      
-                    if (episodeData) {
-                      const title = episodeData.title;
-                      console.log(`You're watching episode ${episode} - ${title}`);
-                        
-                      const playerElement = document.getElementById('player-container'); 
-                      const titleElement = document.createElement('div');
-                      titleElement.innerText = `You're watching episode ${episode} - ${title}`;
-                      titleElement.style.fontSize = '24px'; // Increase text size
-                      playerElement.insertBefore(titleElement, playerElement.firstChild);
-                    } else {
-                      console.log(`Episode ${episode} not found.`);
-                    }
-                  } else {
-                    console.log("Subtype is not 'dub'.");
-                  }
-
                 } else {
                   console.log('Video URL not found.');
                 }
